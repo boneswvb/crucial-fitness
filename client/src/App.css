@@ -1,0 +1,7 @@
+/* General Styles*/
+
+@media only screen and (max-width: 1205px) {
+  .noDisplay {
+    display: none;
+  }
+}

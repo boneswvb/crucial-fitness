@@ -1,0 +1,8 @@
+.list-group-item {
+  border: none;
+}
+
+.card-img,
+.card-img-top {
+  border: 3px #008000 solid;
+}

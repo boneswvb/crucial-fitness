@@ -20,7 +20,7 @@ function NavBar() {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">
-            <Nav.Link eventKey={2}><Link to="/crucial-fitness-and-nutrition">Home</Link></Nav.Link>
+            <Nav.Link eventKey={2}><Link to="/">Home</Link></Nav.Link>
             {
               isSignedOn
                 ? <Nav.Link eventKey={3}><Link to="/Userprofilepage">Profile Page</Link></Nav.Link>
@@ -34,18 +34,23 @@ function NavBar() {
               <NavDropdown.Divider />
               <NavDropdown.Item eventKey={6}><Link to="/aboutpage/missionvisionform">Mission/Vision/Values</Link></NavDropdown.Item>
               <NavDropdown.Divider />
-              {/* <NavDropdown.Item eventKey={7}><Link to="/aboutpage/ruleAndregulationsform">Rules & Regulations</Link></NavDropdown.Item>
+              {/* <NavDropdown.Item eventKey={7}><Link to="/aboutpage/ruleAndregulationsform">
+              Rules & Regulations</Link></NavDropdown.Item>
               <NavDropdown.Divider /> */}
               <NavDropdown.Item eventKey={8}><Link to="/aboutpage/acceptanceform">Acceptance</Link></NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item eventKey={9}><Link to="/aboutpage/waiverform">Waiver</Link></NavDropdown.Item>
             </NavDropdown>
             {/* <NavDropdown title="Health Info" id="collasible-nav-dropdown">
-              <NavDropdown.Item eventKey={10}><Link to="/generalhealthassessmentpage">General Health Assessment</Link></NavDropdown.Item>
+              <NavDropdown.Item eventKey={10}><Link to="/generalhealthassessmentpage">
+              General Health Assessment</Link></NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item eventKey={11}><Link to="/goalsetting">Goal Setting</Link></NavDropdown.Item>
+              <NavDropdown.Item eventKey={11}><Link to="/goalsetting">Goal Setting</Link>
+              </NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item eventKey={12}><Link to="/lifeStyleasspage">Life Style Assessment</Link></NavDropdown.Item>
+              <NavDropdown.Item eventKey={12}><Link to="/lifeStyleasspage">
+              Life Style Assessment</Link>
+              </NavDropdown.Item>
             </NavDropdown> */}
             <NavDropdown title="Interesting Reads" id="collasible-nav-dropdown">
               <NavDropdown.Item eventKey={13}>

@@ -20,7 +20,7 @@ function NavBar() {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">
-            <Nav.Link eventKey={2}><Link to="/">Home</Link></Nav.Link>
+            <Nav.Link eventKey={2}><Link to="/crucial-fitness">Home</Link></Nav.Link>
             {
               isSignedOn
                 ? <Nav.Link eventKey={3}><Link to="/Userprofilepage">Profile Page</Link></Nav.Link>

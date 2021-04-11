@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "93bd6d2ff34f32a35ee01159a10ff313",
+    "revision": "6c0a4fe4164122b0dd3dfa598a77bb24",
     "url": "/crucial-fitness/index.html"
   },
   {
-    "revision": "01c959ba7ee9c1ea55d5",
+    "revision": "4fd048bad24402d12480",
     "url": "/crucial-fitness/static/css/2.2a86faee.chunk.css"
   },
   {
-    "revision": "fc90768037b62a191f83",
+    "revision": "2d7211c819f77011b960",
     "url": "/crucial-fitness/static/css/main.c2869b0f.chunk.css"
   },
   {
-    "revision": "01c959ba7ee9c1ea55d5",
-    "url": "/crucial-fitness/static/js/2.37016119.chunk.js"
+    "revision": "4fd048bad24402d12480",
+    "url": "/crucial-fitness/static/js/2.96db3517.chunk.js"
   },
   {
     "revision": "3453b8997016469371284a28c0e873e2",
-    "url": "/crucial-fitness/static/js/2.37016119.chunk.js.LICENSE.txt"
+    "url": "/crucial-fitness/static/js/2.96db3517.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "fc90768037b62a191f83",
-    "url": "/crucial-fitness/static/js/main.75b2a253.chunk.js"
+    "revision": "2d7211c819f77011b960",
+    "url": "/crucial-fitness/static/js/main.717bc27d.chunk.js"
   },
   {
     "revision": "58788eee86ecb1054a90",

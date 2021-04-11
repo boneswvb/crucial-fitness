@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/crucial-fitness/static/css/main.c2869b0f.chunk.css",
-    "main.js": "/crucial-fitness/static/js/main.90c153c2.chunk.js",
-    "main.js.map": "/crucial-fitness/static/js/main.90c153c2.chunk.js.map",
+    "main.js": "/crucial-fitness/static/js/main.75b2a253.chunk.js",
+    "main.js.map": "/crucial-fitness/static/js/main.75b2a253.chunk.js.map",
     "runtime-main.js": "/crucial-fitness/static/js/runtime-main.00ea4198.js",
     "runtime-main.js.map": "/crucial-fitness/static/js/runtime-main.00ea4198.js.map",
     "static/css/2.2a86faee.chunk.css": "/crucial-fitness/static/css/2.2a86faee.chunk.css",
     "static/js/2.37016119.chunk.js": "/crucial-fitness/static/js/2.37016119.chunk.js",
     "static/js/2.37016119.chunk.js.map": "/crucial-fitness/static/js/2.37016119.chunk.js.map",
     "index.html": "/crucial-fitness/index.html",
-    "precache-manifest.659a8146ceb6889ae4538f80d3944352.js": "/crucial-fitness/precache-manifest.659a8146ceb6889ae4538f80d3944352.js",
+    "precache-manifest.1d5cac2878767fa3fd4799ab458c3b8f.js": "/crucial-fitness/precache-manifest.1d5cac2878767fa3fd4799ab458c3b8f.js",
     "service-worker.js": "/crucial-fitness/service-worker.js",
     "static/css/2.2a86faee.chunk.css.map": "/crucial-fitness/static/css/2.2a86faee.chunk.css.map",
     "static/css/main.c2869b0f.chunk.css.map": "/crucial-fitness/static/css/main.c2869b0f.chunk.css.map",
@@ -63,6 +63,6 @@
     "static/css/2.2a86faee.chunk.css",
     "static/js/2.37016119.chunk.js",
     "static/css/main.c2869b0f.chunk.css",
-    "static/js/main.90c153c2.chunk.js"
+    "static/js/main.75b2a253.chunk.js"
   ]
 }

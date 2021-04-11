@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "4e216cc437b496370c86ae5d45721038",
+    "revision": "93bd6d2ff34f32a35ee01159a10ff313",
     "url": "/crucial-fitness/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/crucial-fitness/static/css/2.2a86faee.chunk.css"
   },
   {
-    "revision": "57f4057a67f175c3b0d4",
+    "revision": "fc90768037b62a191f83",
     "url": "/crucial-fitness/static/css/main.c2869b0f.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/crucial-fitness/static/js/2.37016119.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "57f4057a67f175c3b0d4",
-    "url": "/crucial-fitness/static/js/main.90c153c2.chunk.js"
+    "revision": "fc90768037b62a191f83",
+    "url": "/crucial-fitness/static/js/main.75b2a253.chunk.js"
   },
   {
     "revision": "58788eee86ecb1054a90",

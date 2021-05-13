@@ -22,18 +22,28 @@ function HomeForm() {
         <Card.Body>
           <Card.Title style={{ textAlign: 'center' }}>Health Information</Card.Title>
           <Card.Text>
-            {/* <ListGroup as="ul" style={{ textAlign: 'center' }}>
-              <ListGroup.Item as="li"><Link to="/goalsetting">
-              <p className="dropdown-item">
-              <strong>Goal Setting</strong></p></Link></ListGroup.Item>
-              <ListGroup.Item as="li"><Link to="/lifeStyleasspage"><p className="dropdown-item">
-              <strong>Life Style Assessment</strong></p></Link></ListGroup.Item>
-              <ListGroup.Item as="li"><Link to="/generalhealthassessmentpage">
-              <p className="dropdown-item"><strong>General Health Assessment</strong>
-              </p></Link></ListGroup.Item>
-              <ListGroup.Item as="li"><Link to="/#"><p className="dropdown-item">
-              <strong>&nbsp;</strong></p></Link></ListGroup.Item>
-            </ListGroup> */}
+            <ListGroup as="ul" style={{ textAlign: 'center' }}>
+              <ListGroup.Item as="li">
+                <Link to="/goalsetting">
+                  <p className="dropdown-item"><strong>Goal Setting</strong></p>
+                </Link>
+              </ListGroup.Item>
+              <ListGroup.Item as="li">
+                <Link to="/lifeStyleasspage">
+                  <p className="dropdown-item"><strong>Life Style Assessment</strong></p>
+                </Link>
+              </ListGroup.Item>
+              <ListGroup.Item as="li">
+                <Link to="/generalhealthassessmentpage">
+                  <p className="dropdown-item"><strong>General Health Assessment</strong></p>
+                </Link>
+              </ListGroup.Item>
+              <ListGroup.Item as="li">
+                <Link to="/#">
+                  <p className="dropdown-item"><strong>&nbsp;</strong></p>
+                </Link>
+              </ListGroup.Item>
+            </ListGroup>
           </Card.Text>
         </Card.Body>
       </Card>
@@ -125,7 +135,7 @@ function HomeForm() {
           </Card.Text>
         </Card.Body>
       </Card>
-      <Card style={{ width: '20rem', margin: '10px' }}>
+      <Card style={{ width: '20rem', margin: '10px', display: 'none' }}>
         <Card.Img variant="top" src={Photography} height={250} alt="HealthInfo" />
         <Card.Body>
           <Card.Title style={{ textAlign: 'center' }}>Photography</Card.Title>

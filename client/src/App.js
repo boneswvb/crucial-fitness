@@ -29,7 +29,7 @@ function App() {
       <Header />
       <NavBar />
       <Switch>
-        <Route exact path="/crucial-fitness">
+        <Route exact path="/">
           <HomePage />
         </Route>
         <Route path="/aboutpage">

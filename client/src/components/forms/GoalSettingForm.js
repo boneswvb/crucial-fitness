@@ -8,7 +8,13 @@ function GoalSettingForm({ handlechange, state }) {
   return (
     <div className="container">
       <h1>Goal Setting Form</h1>
-      <Form>
+      <Form
+        id="gform"
+        method="POST"
+        class="pure-form pure-form-stacked"
+        data-email="from_email@example.com"
+        action="https://script.google.com/macros/s/AKfycbw-DZp1Q1Ad8tQCn5N3B4RJlYqGArQH5_pVGrH3wHLnne6gojVf0gV5c3s9fG2mVqTizw/exec"
+      >
 
         <h3>Personal Details</h3>
         <Form.Group controlId="fullname">
@@ -138,6 +144,7 @@ function GoalSettingForm({ handlechange, state }) {
             value={state.hardestToChange}
           />
         </Form.Group>
+        <button type="submit">Submit</button>
       </Form>
     </div>
   );

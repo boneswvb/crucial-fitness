@@ -20,7 +20,7 @@ function NavBar() {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">
-            <Nav.Link eventKey={2}><Link to="/crucial-fitness">Home</Link></Nav.Link>
+            <Nav.Link eventKey={2}><Link to="/">Home</Link></Nav.Link>
             {
               isSignedOn
                 ? <Nav.Link eventKey={3}><Link to="/Userprofilepage">Profile Page</Link></Nav.Link>
@@ -41,17 +41,17 @@ function NavBar() {
               <NavDropdown.Divider />
               <NavDropdown.Item eventKey={9}><Link to="/aboutpage/waiverform">Waiver</Link></NavDropdown.Item>
             </NavDropdown>
-            {/* <NavDropdown title="Health Info" id="collasible-nav-dropdown">
+            <NavDropdown title="Health Info" id="collasible-nav-dropdown">
               <NavDropdown.Item eventKey={10}><Link to="/generalhealthassessmentpage">
-              General Health Assessment</Link></NavDropdown.Item>
+                General Health Assessment</Link></NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item eventKey={11}><Link to="/goalsetting">Goal Setting</Link>
               </NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item eventKey={12}><Link to="/lifeStyleasspage">
-              Life Style Assessment</Link>
+                Life Style Assessment</Link>
               </NavDropdown.Item>
-            </NavDropdown> */}
+            </NavDropdown>
             <NavDropdown title="Interesting Reads" id="collasible-nav-dropdown">
               <NavDropdown.Item eventKey={13}>
                 <Link to="/interestingreadspage/interestingreadsrorm">Interesting Reads</Link>

@@ -8,7 +8,7 @@ function BiographyForm() {
     <div className="container">
       <Media>
         <Media.Body>
-          <h3>Adriana Magdalene Fourie (Adri)</h3>
+          <h3>Adri Fourie</h3>
           <h5>Get to know a bit of me. </h5>
           <p>
             I would like to make use of this opportunity to introduce myself as a Fitness

@@ -8,7 +8,13 @@ function GeneralHealthAssessmentPage({ data, handlechange }) {
   return (
     <div>
       <h1>General Health Assessment</h1>
-      <Form>
+      <Form
+        id="gform"
+        method="POST"
+        class="pure-form pure-form-stacked"
+        data-email="from_email@example.com"
+        action="https://script.google.com/macros/s/AKfycbw-DZp1Q1Ad8tQCn5N3B4RJlYqGArQH5_pVGrH3wHLnne6gojVf0gV5c3s9fG2mVqTizw/exec"
+      >
         <h3>Personal Details</h3>
         <Form.Group controlId="fullname">
           <Form.Label>Full Names</Form.Label>
@@ -979,9 +985,7 @@ function GeneralHealthAssessmentPage({ data, handlechange }) {
             />
           </Form.Label>
         </Form.Group>
-        <p>Your score = 4</p>
-        <p>Short description of your score</p>
-        <p>You need to see help</p>
+        <button type="submit">Submit</button>
       </Form>
     </div>
   );

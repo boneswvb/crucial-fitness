@@ -12,8 +12,9 @@ function LifeStyleAssForm({ handleChange, state }) {
       <Form
         id="gform"
         method="POST"
+        class="pure-form pure-form-stacked"
         data-email="from_email@example.com"
-        action="https://script.google.com/macros/s/AKfycbwDet4aTarf3N06yjpTQ4LckVRBKu4fL4ENdiJXR98JhWMSLNBugyTIYA/exec"
+        action="https://script.google.com/macros/s/AKfycbw-DZp1Q1Ad8tQCn5N3B4RJlYqGArQH5_pVGrH3wHLnne6gojVf0gV5c3s9fG2mVqTizw/exec"
       >
         <Form.Group controlId="fullname">
           <Form.Label>Full Names</Form.Label>

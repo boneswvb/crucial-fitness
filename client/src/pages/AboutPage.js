@@ -14,7 +14,7 @@ function AboutPage() {
   return (
     <div className="container" style={{ textAlign: 'center' }}>
       <Helmet>
-        <meta name="keywords" content="Crucial Fitness And Nutrition" />
+        <meta name="keywords" content="Crucial Fitness - Coaching & Rehabilitation" />
         <meta
           name="description"
           content="Crucial Fitness Coaching And Rehabilitation Biography
@@ -26,9 +26,9 @@ function AboutPage() {
           Fittness training
           Nutrition"
         />
-        <title>About Crucial Fitness & Nutrition</title>
+        <title>About Crucial Fitness - Coaching & Rehabilitation</title>
       </Helmet>
-      <h1>About Crucial Fitness & Nutrition</h1>
+      <h1>About Crucial Fitness - Coaching & Rehabilitation</h1>
       <Switch>
         <Route path="/aboutpage/aboutform">
           <AboutForm />

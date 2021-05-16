@@ -3,37 +3,42 @@ const express = require('express');
 const router = express.Router();
 const db = require('../../database');
 
-router.get('/', function (req, res) {
-  res.send('hello register');
+router.post('/', function (req, res) {
+  const { email, password, lastname, } = req.body;
+
+  if (!email || !password || !lastname) {
+    return res.status(400).json('incorrect form submission');
+  }
+  db.transaction(trx => {
+    trx.insert({
+      password: password,
+      email: email,
+      date: new Date()
+    })
+      .into('secrets')
+      .returning('email')
+      .then(loginEmail => {
+        return trx('signin')
+          .returning('*')
+          .insert({
+            lastname: lastname,
+            email: loginEmail[0],
+            date: new Date()
+          })
+          .then(user => {
+            res.json(user[0]);
+          })
+      })
+      .then(trx.commit)
+      .catch(trx.rollback)
+  })
+    .catch(err => res.status(400).json('unable to register'))
 });
 
 module.exports = router;
 
-// const { email, name, password } = req.body;
-// if (!email || !name || !password) {
-//   return res.status(400).json('incorrect form submission');
+// {
+//   "password": "password",
+//   "email": "email",
+//   "lastname": "lastname"
 // }
-// const hash = bcrypt.hashSync(password);
-// db.transaction(trx => {
-//   trx.insert({
-//     hash: hash,
-//     email: email
-//   })
-//   .into('login')
-//   .returning('email')
-//   .then(loginEmail => {
-//     return trx('users')
-//     .returning('*')
-//     .insert({
-//       email: loginEmail[0],
-//       name: name,
-//       joined: new Date()
-//     })
-//     .then(user => {
-//       res.json(user[0]);
-//     })
-//   })
-//   .then(trx.commit)
-//   .catch(trx.rollback)
-// })
-// .catch(err => res.status(400).json('unable to register'))

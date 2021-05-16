@@ -22,10 +22,22 @@ export default function Login() {
       });
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-  };
+  const { password, email, lastname } = formState;
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const body = { password, email, lastname };
+      await fetch('http://localhost:5000/api/Register', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(body),
+      });
+      window.location = '/';
+    } catch (err) {
+      console.error(err.message);
+    }
+  };
   return (
     <div>
       <Register

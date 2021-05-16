@@ -4,36 +4,36 @@ CREATE DATABASE c_fitness;
 
 CREATE TABLE signin
 (
-  si_id SERIAL PRIMARY KEY,
-  username VARCHAR(255),
-  email VARCHAR(255) UNIQUE NOT NULL,
+  si_id SERIAL,
+  lastname VARCHAR(255),
+  email VARCHAR(255) NOT NULL PRIMARY KEY,
   date DATE NOT NULL
 );
 
 CREATE TABLE secrets
 (
-  se_id SERIAL PRIMARY KEY,
+  se_id SERIAL,
   password VARCHAR(255),
-  email VARCHAR(255) UNIQUE NOT NULL,
+  email VARCHAR(255) UNIQUE NOT NULL PRIMARY KEY,
   date DATE NOT NULL
 );
 
 INSERT INTO signin
-  (username, email, date)
+  (lastname, email, date)
 VALUES
-  ('bones', 'bones@bones.com', '2021-01-10');
+  ('bones1', 'bones1@bones.com', '2021-01-10');
 
 INSERT INTO secrets
   (password, email, date)
 VALUES
-  ('myPassword', 'bones@bones.com', '2021-01-10');
+  ('myPassword1', 'bones1@bones.com', '2021-01-10');
 
 /*Create tables and inset data for General Health Assessment Form*/
 
 CREATE TABLE general_health_assessment_form
 (
-  haf_id SERIAL PRIMARY KEY,
-  email VARCHAR(255) UNIQUE NOT NULL,
+  haf_id SERIAL,
+  email VARCHAR(255) NOT NULL PRIMARY KEY,
   ihavesomeonetotalkto SMALLINT,
   giveandreceiveaffection SMALLINT,
   iAmphysicallyactive SMALLINT,
@@ -133,8 +133,8 @@ VALUES
 
 CREATE TABLE goal_setting_form
 (
-  gsf_id SERIAL PRIMARY KEY,
-  email VARCHAR(255) UNIQUE NOT NULL,
+  gsf_id SERIAL,
+  email VARCHAR(255) NOT NULL PRIMARY KEY,
   lifstylechanges VARCHAR(3000),
   easiesttochange VARCHAR(3000),
   hardesttochange VARCHAR(3000),
@@ -150,16 +150,8 @@ VALUES
 
 CREATE TABLE lifestyle_ass_form
 (
-  laf_id SERIAL PRIMARY KEY,
-  email VARCHAR(255) UNIQUE NOT NULL,
-  fullname VARCHAR(255),
-  lastname VARCHAR(255),
-  dateofbirth VARCHAR(255),
-  adress VARCHAR(255),
-  cellno VARCHAR(255),
-  econtact VARCHAR(255),
-  ecellno VARCHAR(255),
-  relationship VARCHAR(255),
+  laf_id SERIAL,
+  email VARCHAR(255) NOT NULL PRIMARY KEY,
   curhealtproblems VARCHAR(3000),
   medicalhistory VARCHAR(3000),
   medsandsuppliments VARCHAR(3000),
@@ -238,8 +230,8 @@ VALUES
 
 CREATE TABLE patient_details
 (
-  laf_id SERIAL PRIMARY KEY,
-  email VARCHAR(255) UNIQUE NOT NULL,
+  p_id SERIAL,
+  email VARCHAR(255) UNIQUE NOT NULL PRIMARY KEY,
   fullname VARCHAR(255),
   lastname VARCHAR(255),
   dateofbirth VARCHAR(255),

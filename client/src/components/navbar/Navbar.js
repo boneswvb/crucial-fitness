@@ -6,8 +6,8 @@ import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 
-// import Logon from '../../containers/LogonCon';
-// import RegisterCon from '../../containers/RegisterCon';
+import LogonCon from '../../containers/LogonCon';
+import RegisterCon from '../../containers/RegisterCon';
 import { Context } from '../../contextProvider/LogonContextP';
 
 import './Navbar.css';
@@ -42,14 +42,14 @@ function NavBar() {
               <NavDropdown.Item eventKey={9}><Link to="/aboutpage/waiverform">Waiver</Link></NavDropdown.Item>
             </NavDropdown>
             <NavDropdown title="Health Info" id="collasible-nav-dropdown">
-              <NavDropdown.Item eventKey={10}><Link to="/generalhealthassessmentpage">
-                General Health Assessment</Link></NavDropdown.Item>
+              <NavDropdown.Item eventKey={10}><Link to="/generalhealthassessmentpage">General Health Assessment</Link></NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item eventKey={11}><Link to="/goalsetting">Goal Setting</Link>
+              <NavDropdown.Item eventKey={11}>
+                <Link to="/goalsetting">Goal Setting</Link>
               </NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item eventKey={12}><Link to="/lifeStyleasspage">
-                Life Style Assessment</Link>
+              <NavDropdown.Item eventKey={12}>
+                <Link to="/lifeStyleasspage">Life Style Assessment</Link>
               </NavDropdown.Item>
             </NavDropdown>
             <NavDropdown title="Interesting Reads" id="collasible-nav-dropdown">
@@ -148,9 +148,9 @@ function NavBar() {
               <NavDropdown.Divider />
               <NavDropdown.Item eventKey={45}><Link to="/ratespage/ratecoachingsportspecificform">Coaching - Sport Specific</Link></NavDropdown.Item>
             </NavDropdown>
-            {/* <Logon />
+            <LogonCon />
             &nbsp;
-            <RegisterCon /> */}
+            <RegisterCon />
           </Nav>
         </Navbar.Collapse>
       </Navbar>

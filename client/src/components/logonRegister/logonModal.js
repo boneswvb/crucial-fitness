@@ -1,27 +1,22 @@
 import React, { useContext } from 'react';
 
-import PropTypes from 'prop-types';
-
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 
 import { Context } from '../../contextProvider/LogonContextP';
 
-function Logon({
-  handlesubmit,
-  onchange,
-  state,
-}) {
+function Logon() {
   const {
-    handleClickLogOn,
-    handleClickLogOff,
     isSignedOn,
+    handleClickLogOff,
     show,
     handleClose,
     handleShow,
+    formState,
+    handleChange,
+    getUserInfo,
   } = useContext(Context);
-
   return (
     <div>
       {
@@ -33,19 +28,19 @@ function Logon({
       &nbsp;
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title><p>Logon</p></Modal.Title>
+          <Modal.Title>Logon</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <div className="Login">
-            <Form onSubmit={handlesubmit}>
+            <Form>
               <Form.Group size="lg" controlId="email">
                 <Form.Label>Email</Form.Label>
                 <Form.Control
                   autoFocus
                   type="email"
                   name="email"
-                  onChange={onchange}
-                  value={state.email}
+                  onChange={handleChange}
+                  value={formState.email}
                 />
               </Form.Group>
               <Form.Group size="lg" controlId="password">
@@ -53,8 +48,8 @@ function Logon({
                 <Form.Control
                   type="password"
                   name="password"
-                  value={state.password}
-                  onChange={onchange}
+                  value={formState.password}
+                  onChange={handleChange}
                 />
               </Form.Group>
             </Form>
@@ -64,7 +59,7 @@ function Logon({
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-          <Button variant="primary" onClick={() => handleClickLogOn()}>
+          <Button type="submit" value="Register" variant="primary" onClick={(e) => getUserInfo(e)}>
             Log on
           </Button>
         </Modal.Footer>
@@ -72,11 +67,5 @@ function Logon({
     </div>
   );
 }
-
-Logon.propTypes = {
-  handlesubmit: PropTypes.func.isRequired,
-  onchange: PropTypes.func.isRequired,
-  state: PropTypes.string.isRequired,
-};
 
 export default Logon;

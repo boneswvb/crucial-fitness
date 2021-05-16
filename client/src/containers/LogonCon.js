@@ -1,38 +1,22 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 
-import Example from '../components/logonRegister/logonModal';
+import { Context } from '../contextProvider/LogonContextP';
 
-export default function Login() {
-  const [formState, setFormState] = useState('');
+import Logon from '../components/logonRegister/logonModal';
 
-  const handleChange = (e) => {
-    const {
-      name,
-      value,
-      type,
-      checked,
-    } = e.target;
-    return type === 'checkbox' ? setFormState({
-      ...formState,
-      [name]: checked,
-    })
-      : setFormState({
-        ...formState,
-        [name]: value,
-      });
-  };
-
-  function handleSubmit(event) {
-    event.preventDefault();
-  }
-
+function Login() {
+  const {
+    handlechange,
+    formState,
+  } = useContext(Context);
   return (
     <div>
-      <Example
-        handlesubmit={handleSubmit}
-        onchange={handleChange}
+      <Logon
+        handlechange={handlechange}
         state={formState}
       />
     </div>
   );
 }
+
+export default Login;

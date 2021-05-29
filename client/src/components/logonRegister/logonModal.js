@@ -1,5 +1,8 @@
 import React, { useContext } from 'react';
 
+import { Link } from 'react-router-dom';
+import Nav from 'react-bootstrap/Nav';
+
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
@@ -20,12 +23,11 @@ function Logon() {
   return (
     <div>
       {
-        isSignedOn
-          ? <Button variant="secondary" onClick={handleClickLogOff}>Log off</Button>
-          : <Button variant="secondary" onClick={handleShow}>Logon</Button>
+        !isSignedOn
+          ? <Button variant="secondary" onClick={handleShow}>Logon</Button>
+          : < Nav.Link eventKey={2}><Link to="/"><Button variant="secondary" onClick={handleClickLogOff}>Log off</Button></Link></Nav.Link>
       }
-      &nbsp;
-      &nbsp;
+
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Logon</Modal.Title>
@@ -64,7 +66,7 @@ function Logon() {
           </Button>
         </Modal.Footer>
       </Modal>
-    </div>
+    </div >
   );
 }
 

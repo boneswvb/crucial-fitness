@@ -4,7 +4,7 @@ const router = express.Router();
 const db = require('../../database');
 
 router.get('/', function (req, res) {
-  db.select().from('patient_details').orderBy('laf_id')
+  db.select().from('patient_details').orderBy('p_id')
     .then(function (data) {
       res.send(data);
     })

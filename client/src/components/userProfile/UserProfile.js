@@ -1,19 +1,32 @@
-import React, { useContext } from 'react';
+import React from 'react';
 
-import PatientDetailsCon from '../../containers/PatientDetailsCon';
-import { Context } from '../../contextProvider/LogonContextP';
-
-function UserProfile() {
-  const { userInfo } = useContext(Context);
-  console.log("userInfo", userInfo);
+function UserProfile({
+  id,
+  email,
+  fullname,
+  lastname,
+  dateofbirth,
+  adress,
+  cellno,
+  econtact,
+  ecellno,
+  relationship,
+  date,
+  allresults,
+}) {
   return (
     <div>
-      <h1>Userprofile</h1>
-      <h3>Good day Mr/s {userInfo.lastname}</h3>
-      <p>You joined this website on: {userInfo.date}</p>
-      <p>Your registered email: {userInfo.email}</p>
-      <p>Your registration number: {userInfo.si_id}</p>
-      <PatientDetailsCon />
+      <p>Patient P_ID: {id}</p>
+      <p>Email: {email}</p>
+      <p>Full name: {fullname}</p>
+      <p>Last name: {lastname}</p>
+      <p>Date of birth: {dateofbirth}</p>
+      <p>Adress: {adress}</p>
+      <p>Cellphone number: {cellno}</p>
+      <p>Emergency contact: {econtact}</p>
+      <p>Emergency contact cellphone number: {ecellno}</p>
+      <p>Relationship to member: {relationship}</p>
+      <p>Date joined: {date}</p>
     </div>
   );
 }

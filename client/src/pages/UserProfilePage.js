@@ -1,17 +1,14 @@
-import React, { useContext } from 'react';
+import React from 'react';
 
-import UserProfile from '../components/userProfile/UserProfile';
-import { Context } from '../contextProvider/LogonContextP';
-
-import './UserProfilePage.css';
+import PatientPersonalDetailsCon from '../containers/PatientPersonalDetailsCon';
+import PatientDetailsCon from '../containers/PatientDetailsCon';
 
 function UserProfilePage() {
-  const { isSignedOn } = useContext(Context);
-  const style = isSignedOn ? 'displayUser' : 'displayUserNo';
-
   return (
-    <div className={style}>
-      <UserProfile />
+    <div >
+      <h1>User Profile</h1>
+      <PatientDetailsCon />
+      <PatientPersonalDetailsCon />
     </div>
   );
 }

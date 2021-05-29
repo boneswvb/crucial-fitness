@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
@@ -9,20 +9,37 @@ import PropTypes from 'prop-types';
 function PatientDetails({
   handlechange,
   state,
+  handlesubmitpatdetails,
+  handleclose,
+  handleshow,
+  show
 }) {
-  const [show, setShow] = useState(false);
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
   return (
     <div>
-      <Button variant="secondary" onClick={handleShow}>Update Personal Details</Button>
-      <Modal show={show} onHide={handleClose}>
+      <Button variant="secondary" onClick={handleshow}>Update Personal Details</Button>
+      <Modal show={show} onHide={handleclose}>
         <Modal.Header closeButton>
-          <Modal.Title>Register</Modal.Title>
+          <Modal.Title>Personal Details</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Form>
+          <Form
+          // id="gform"
+          // method="POST"
+          // class="pure-form pure-form-stacked"
+          // data-email="from_email@example.com"
+          // action="https://script.google.com/macros/s/AKfycbw-DZp1Q1Ad8tQCn5N3B4RJlYqGArQH5_pVGrH3wHLnne6gojVf0gV5c3s9fG2mVqTizw/exec"
+          >
             <h3>Personal Details</h3>
+            <Form.Group size="lg" controlId="email">
+              <Form.Label>Email</Form.Label>
+              <Form.Control
+                autoFocus
+                type="email"
+                name="email"
+                onChange={handlechange}
+                value={state.email}
+              />
+            </Form.Group>
             <Form.Group controlId="fullname">
               <Form.Label>Full Names</Form.Label>
               <Form.Control
@@ -115,11 +132,11 @@ function PatientDetails({
           </Form>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
+          <Button variant="secondary" onClick={handleclose}>
             Close
           </Button>
-          <Button variant="primary" onClick={handleClose}>
-            Register
+          <Button type="submit" value="Submit" variant="primary" onClick={handlesubmitpatdetails}>
+            Submit
           </Button>
         </Modal.Footer>
       </Modal>

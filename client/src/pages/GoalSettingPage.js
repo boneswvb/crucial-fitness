@@ -1,22 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import { Helmet } from 'react-helmet';
 
-import GoalSettingForm from '../components/forms/GoalSettingForm';
+import SubmitGoalsettingForm from '../containers/SubmitGoalsettingForm';
 
 function GoalSettingPage() {
-  const [formState, setFormState] = useState({});
-
-  const handleChange = (event) => {
-    const {
-      name,
-      value,
-    } = event.target;
-    setFormState({
-      ...formState,
-      [name]: value,
-    });
-  };
   return (
     <div className="container">
       <Helmet>
@@ -27,10 +15,7 @@ function GoalSettingPage() {
         <meta name="description" content="Agents" />
         <title>Goal Setting Form - Crucial Fitness & Nutrition</title>
       </Helmet>
-      <GoalSettingForm
-        handlechange={handleChange}
-        state={formState}
-      />
+      <SubmitGoalsettingForm />
     </div>
   );
 }

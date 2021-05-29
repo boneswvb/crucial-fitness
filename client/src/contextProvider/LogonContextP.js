@@ -17,9 +17,9 @@ function ContextProvider({ children }) {
   const handleClickLogOff = () => {
     setIsSignedOn(false)
     setUserInfo({})
+    setFormState('')
   };
 
-  console.log('userInfo', userInfo);
   const handleChange = (e) => {
     const {
       name,
@@ -37,7 +37,8 @@ function ContextProvider({ children }) {
       });
   };
 
-  const getUserInfo = async () => {
+  const getUserInfo = async (e) => {
+    e.preventDefault();
     await fetch('http://localhost:5000/api/SignIn', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -48,10 +49,12 @@ function ContextProvider({ children }) {
     })
       .then((response) => response.json())
       .then((user) => {
-        if (user) {
+        if (user.email === formState.email) {
           setUserInfo(user);
           setIsSignedOn(true);
           handleClose();
+        } else {
+          alert("Incorrect log on info provided")
         }
       })
   };

@@ -32,8 +32,8 @@ VALUES
 
 CREATE TABLE general_health_assessment_form
 (
-  haf_id SERIAL,
-  email VARCHAR(255) NOT NULL PRIMARY KEY,
+  haf_id SERIAL PRIMARY KEY,
+  email VARCHAR(255) NOT NULL ,
   ihavesomeonetotalkto SMALLINT,
   giveandreceiveaffection SMALLINT,
   iAmphysicallyactive SMALLINT,
@@ -133,8 +133,8 @@ VALUES
 
 CREATE TABLE goal_setting_form
 (
-  gsf_id SERIAL,
-  email VARCHAR(255) NOT NULL PRIMARY KEY,
+  gsf_id SERIAL PRIMARY KEY,
+  email VARCHAR(255) NOT NULL,
   lifstylechanges VARCHAR(3000),
   easiesttochange VARCHAR(3000),
   hardesttochange VARCHAR(3000),
@@ -144,14 +144,14 @@ CREATE TABLE goal_setting_form
 INSERT INTO goal_setting_form
   (email, lifstylechanges, easiesttochange, hardesttochange, date)
 VALUES
-  ('bones@bones.com', 'Some long story 1', 'Some long story 2', 'Some long story 3', '2021-01-10');
+  ('bones@bones.com', 'Some long story 1', 'Some long story 2', 'Some long story 3', '2021-10-10');
 
 /*Create tables and inset data for Life Style Assessment Form*/
 
 CREATE TABLE lifestyle_ass_form
 (
-  laf_id SERIAL,
-  email VARCHAR(255) NOT NULL PRIMARY KEY,
+  laf_id SERIAL PRIMARY KEY,
+  email VARCHAR(255) NOT NULL,
   curhealtproblems VARCHAR(3000),
   medicalhistory VARCHAR(3000),
   medsandsuppliments VARCHAR(3000),
@@ -230,8 +230,8 @@ VALUES
 
 CREATE TABLE patient_details
 (
-  p_id SERIAL,
-  email VARCHAR(255) UNIQUE NOT NULL PRIMARY KEY,
+  p_id SERIAL PRIMARY KEY,
+  email VARCHAR(255) NOT NULL,
   fullname VARCHAR(255),
   lastname VARCHAR(255),
   dateofbirth VARCHAR(255),

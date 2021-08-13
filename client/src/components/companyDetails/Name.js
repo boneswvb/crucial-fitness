@@ -11,7 +11,6 @@ function Name() {
         <p className="d-flex justify-content-sm-center">Cel:  076 799 0733</p>
         <p className="d-flex justify-content-sm-center">Email: info@crucialfitness.com</p>
         <p className="d-flex justify-content-sm-center">Email: admin@crucialfitness.com</p>
-        <p className="d-flex justify-content-sm-center">Email: adrifourie.af@gmail.com</p>
       </Media.Body>
     </div>
   );

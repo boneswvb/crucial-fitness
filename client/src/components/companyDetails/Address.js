@@ -17,7 +17,9 @@ function Address() {
             &nbsp; 076 799 0733
           <br />
           <strong>Email:</strong>
-            &nbsp; adrifourie.af@gmail.com
+            &nbsp; info@crucialfitness.com
+            <strong>Email:</strong>
+            &nbsp; admin@crucialfitness.com
         </p>
       </Media.Body>
     </div>

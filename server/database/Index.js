@@ -1,11 +1,9 @@
+require('dotenv').config();
+
 const knex = require('knex')({
-  client: 'pg',
+  client: 'sqlite3',
   connection: {
-    host: 'localhost',
-    user: 'postgres',
-    password: 'Wwim1234',
-    port: 5432,
-    database: 'c_fitness'
+    filename: './cfitness.db'
   }
 });
 

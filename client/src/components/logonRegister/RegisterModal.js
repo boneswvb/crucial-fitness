@@ -50,7 +50,7 @@ function Register({
                 onChange={onchange}
               />
             </Form.Group>
-            <Form.Group size="lg" controlId="password">
+            <Form.Group size="lg" controlId="lastname">
               <Form.Label>Surname</Form.Label>
               <Form.Control
                 type="text"

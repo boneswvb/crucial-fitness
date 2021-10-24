@@ -3,6 +3,10 @@ const express = require('express');
 const router = express.Router();
 const db = require('../../database');
 
+router.get('/', function (req, res) {
+  res.json("register")
+});
+
 router.post('/', function (req, res) {
   const { email, password, lastname, } = req.body;
 
@@ -13,25 +17,29 @@ router.post('/', function (req, res) {
     trx.insert({
       password: password,
       email: email,
-      date: new Date()
+      date: Date()
     })
       .into('secrets')
-      .returning('email')
-      .then(loginEmail => {
+      // .returning('email') - last_insert_rowid
+      .then(id => {
         return trx('signin')
-          .returning('*')
           .insert({
+            si_id: signin.id,
             lastname: lastname,
-            email: loginEmail[0],
-            date: new Date()
+            email: email,
+            date: Date()
           })
+          // .returning('*')
           .then(user => {
             res.json(user[0]);
           })
+        })
+        .then(trx.commit)
+        .catch(trx.rollback)
       })
-      .then(trx.commit)
-      .catch(trx.rollback)
-  })
+      .catch(function (err) {
+        console.log('error: ', err);
+      })
     .catch(err => res.status(400).json('unable to register'))
 });
 

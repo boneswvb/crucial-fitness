@@ -16,20 +16,11 @@ router.get('/', function (req, res) {
 
 //Add to database
 router.post('/', function (req, res) {
-  db.insert(req.body).returning('*').into('goal_setting_form').then(function (data) {
+  db.insert(req.body).into('goal_setting_form').then(function (data) {
     res.send(data)
   })
     .catch(err => res.status(400).json('unable to post'))
 });
-
-// {
-//   "email": "bone12s@bones.com", 
-//   "lifstylechanges": "Some long story 111", 
-//   "easiesttochange": "Some long story 222", 
-//   "hardesttochange": "Some long story 333", 
-//   "date": "2021-01-10"
-// }
-
 
 // Get one
 router.get('/:email', function (req, res) {
@@ -40,4 +31,31 @@ router.get('/:email', function (req, res) {
     .catch(err => res.status(400).json('unable to post'))
 });
 
+//Delete by id
+router.delete("/:gsf_id", async (req, res) => {
+  await db.raw(`DELETE FROM goal_setting_form WHERE gsf_id = ?`,
+    [req.params.gsf_id],
+    res.status(200).json("deleted")
+  )
+    .catch((err) => res.status(400).json('unable to delete'))
+});
+
+// Change info by ID
+router.put("/", async (req, res) => {
+  var reqBody = req.body;
+  await db.raw(`UPDATE goal_setting_form SET email = ?, lifstylechanges = ?, easiesttochange = ?, hardesttochange = ?, date = ?  WHERE gsf_id = ?`,
+    [reqBody.email, reqBody.lifstylechanges, reqBody.easiesttochange, reqBody.hardesttochange, Date(),  reqBody.gsf_id],
+    res.status(200).json("updated")
+  )
+  .catch((err) => res.status(400).json('unable to change'))
+});
+
 module.exports = router;
+
+// {
+//   "email": "bone12s@bones.com", 
+//   "lifstylechanges": "Some long story 111", 
+//   "easiesttochange": "Some long story 222", 
+//   "hardesttochange": "Some long story 333", 
+//   "date": "2021-01-10"
+// }

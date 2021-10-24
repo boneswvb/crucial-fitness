@@ -1,18 +1,19 @@
 CREATE DATABASE c_fitness;
 
 /*Create tables and inset data for logon function*/
+/*si_id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL*/
 
 CREATE TABLE signin
 (
-  si_id SERIAL,
+  si_id INTEGER PRIMARY KEY NOT NULL,
   lastname VARCHAR(255),
-  email VARCHAR(255) NOT NULL PRIMARY KEY,
+  email VARCHAR(255) NOT NULL,
   date DATE NOT NULL
 );
 
 CREATE TABLE secrets
 (
-  se_id SERIAL,
+  se_id INTEGER NOT NULL,
   password VARCHAR(255),
   email VARCHAR(255) UNIQUE NOT NULL PRIMARY KEY,
   date DATE NOT NULL
@@ -24,15 +25,15 @@ VALUES
   ('bones1', 'bones1@bones.com', '2021-01-10');
 
 INSERT INTO secrets
-  (password, email, date)
+  (se_id, password, email, date)
 VALUES
-  ('myPassword1', 'bones1@bones.com', '2021-01-10');
+  ('1', 'myPassword1', 'bones1@bones.com', '2021-01-10');
 
 /*Create tables and inset data for General Health Assessment Form*/
 
 CREATE TABLE general_health_assessment_form
 (
-  haf_id SERIAL PRIMARY KEY,
+  haf_id INTEGER PRIMARY KEY NOT NULL,
   email VARCHAR(255) NOT NULL ,
   ihavesomeonetotalkto SMALLINT,
   giveandreceiveaffection SMALLINT,
@@ -126,14 +127,14 @@ VALUES
     '0',
     '0',
     '20',
-    '2021-01-10'
+    Date()
   );
 
 /*Create tables and inset data for Goal Setting Form*/
 
 CREATE TABLE goal_setting_form
 (
-  gsf_id SERIAL PRIMARY KEY,
+  gsf_id INTEGER PRIMARY KEY NOT NULL,
   email VARCHAR(255) NOT NULL,
   lifstylechanges VARCHAR(3000),
   easiesttochange VARCHAR(3000),
@@ -144,13 +145,13 @@ CREATE TABLE goal_setting_form
 INSERT INTO goal_setting_form
   (email, lifstylechanges, easiesttochange, hardesttochange, date)
 VALUES
-  ('bones@bones.com', 'Some long story 1', 'Some long story 2', 'Some long story 3', '2021-10-10');
+  ('bones@bones.com', 'Some long story 1', 'Some long story 2', 'Some long story 3', '2021-10-23');
 
 /*Create tables and inset data for Life Style Assessment Form*/
 
 CREATE TABLE lifestyle_ass_form
 (
-  laf_id SERIAL PRIMARY KEY,
+  laf_id INTEGER PRIMARY KEY NOT NULL,
   email VARCHAR(255) NOT NULL,
   curhealtproblems VARCHAR(3000),
   medicalhistory VARCHAR(3000),
@@ -230,7 +231,7 @@ VALUES
 
 CREATE TABLE patient_details
 (
-  p_id SERIAL PRIMARY KEY,
+  p_id INTEGER PRIMARY KEY NOT NULL,
   email VARCHAR(255) NOT NULL,
   fullname VARCHAR(255),
   lastname VARCHAR(255),

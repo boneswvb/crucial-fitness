@@ -12,7 +12,6 @@ function UserProfile({
   ecellno,
   relationship,
   date,
-  allresults,
 }) {
   return (
     <div>

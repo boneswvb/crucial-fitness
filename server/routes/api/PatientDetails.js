@@ -47,11 +47,8 @@ router.put("/", async (req, res) => {
   await db.raw(`UPDATE patient_details SET email = ?, fullname = ?, lastname = ?, dateofbirth = ?, adress = ?, cellno = ?, econtact = ?, ecellno = ?, relationship = ?, date = ? WHERE p_id = ?`,
     [reqBody.email, reqBody.fullname, reqBody.lastname, reqBody.dateofbirth, reqBody.adress, reqBody.cellno, reqBody.econtact, reqBody.ecellno, reqBody.relationship, Date(),  reqBody.p_id], 
     res.status(200).json("updated")
-  )
-  .catch(function (err) {
-    console.log('error: ', err);
-  });
-  // .catch((err) => res.status(400).json('unable to change'))
+  )  
+  .catch((err) => res.status(400).json('unable to change'))
 });
 
 module.exports = router;

@@ -3,6 +3,7 @@ const express = require('express');
 const router = express.Router();
 const db = require('../../database');
 
+//get all
 router.get('/', function (req, res) {
   db.select().from('general_health_assessment_form').orderBy('haf_id')
     .then(function (data) {
@@ -13,6 +14,7 @@ router.get('/', function (req, res) {
     });
 });
 
+//Send to DB
 router.post('/', function (req, res) {
   db.insert(req.body).into('general_health_assessment_form')
     .then(function (data) {
@@ -50,36 +52,3 @@ router.put("/", async (req, res) => {
 });
 
 module.exports = router;
-
-// {
-//   "haf_id": 2,
-//   "email": "change@change.com", 
-//   "ihavesomeonetotalkto": 2, 
-//   "giveandreceiveaffection": 2, 
-//   "iAmphysicallyactive": 2, 
-//   "iexercise": 2, 
-//   "useseatbelts": 2, 
-//   "isleepwell": 2, 
-//   "ofteneatexcess": 2, 
-//   "overweight": 2, 
-//   "underweight": 2, 
-//   "myidealweight": 2, 
-//   "smokedtabacco": 2, 
-//   "cigarettesperday": 2, 
-//   "illegaldrugs": 2, 
-//   "overusemedication": 2, 
-//   "caffeinecontainingdrinks": 2, 
-//   "averagealcoholintake": 2, 
-//   "morethanfourdrinks": 2, 
-//   "driveafterdrinking": 2, 
-//   "copewithstress": 2, 
-//   "leisuretime": 2, 
-//   "inahurry": 2, 
-//   "angryhostile": 2, 
-//   "positiveoptimistic": 2, 
-//   "tenseuptight": 2, 
-//   "saddepressed": 2, 
-//   "satisfiedjobrole": 2, 
-//   "score": 20, 
-//   "date": "2021-01-20"
-//   } 

@@ -13,21 +13,34 @@ CREATE TABLE signin
 
 CREATE TABLE secrets
 (
-  se_id INTEGER NOT NULL,
+  se_id INTEGER PRIMARY KEY NOT NULL,
   password VARCHAR(255),
-  email VARCHAR(255) UNIQUE NOT NULL PRIMARY KEY,
+  email VARCHAR(255) UNIQUE NOT NULL,
   date DATE NOT NULL
 );
 
 INSERT INTO signin
   (lastname, email, date)
 VALUES
-  ('bones1', 'bones1@bones.com', '2021-01-10');
+  ('test', 'test@test.com', '2021-10-27');
 
 INSERT INTO secrets
-  (se_id, password, email, date)
+  (password, email, date)
 VALUES
-  ('1', 'myPassword1', 'bones1@bones.com', '2021-01-10');
+  ('test', 'test@test.com', '2021-10-27');
+
+/*Create tables and inset data for Score*/
+  CREATE TABLE score
+(
+  score_id INTEGER PRIMARY KEY NOT NULL,
+  score_description VARCHAR(1000) NOT NULL,
+  date DATE NOT NULL
+);
+
+INSERT INTO score
+  (score_description, date)
+VALUES
+  ('test', '2021-10-31');
 
 /*Create tables and inset data for General Health Assessment Form*/
 
@@ -61,7 +74,6 @@ CREATE TABLE general_health_assessment_form
   tenseuptight SMALLINT,
   saddepressed SMALLINT,
   satisfiedjobrole SMALLINT,
-  score SMALLINT,
   date DATE NOT NULL
 );
 
@@ -94,7 +106,6 @@ INSERT INTO general_health_assessment_form
   tenseuptight,
   saddepressed,
   satisfiedjobrole,
-  score,
   date
   )
 VALUES
@@ -126,7 +137,6 @@ VALUES
     '2',
     '0',
     '0',
-    '20',
     Date()
   );
 

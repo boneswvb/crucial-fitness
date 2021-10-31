@@ -51,11 +51,3 @@ router.put("/", async (req, res) => {
 });
 
 module.exports = router;
-
-// {
-//   "email": "bone12s@bones.com", 
-//   "lifstylechanges": "Some long story 111", 
-//   "easiesttochange": "Some long story 222", 
-//   "hardesttochange": "Some long story 333", 
-//   "date": "2021-01-10"
-// }

@@ -1,10 +1,11 @@
 import React from 'react';
 
-import { Form } from 'react-bootstrap';
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
 
 import PropTypes from 'prop-types';
 
-function GeneralHealthAssessmentPage({ data, handlechange }) {
+function GeneralHealthAssessmentPage({ state, handlechange, handlesubmitgoalsettingform }) {
   return (
     <div>
       <h1>General Health Assessment</h1>
@@ -12,106 +13,19 @@ function GeneralHealthAssessmentPage({ data, handlechange }) {
         id="gform"
         method="POST"
         class="pure-form pure-form-stacked"
-        data-email="from_email@example.com"
+        state-email="from_email@example.com"
         action="https://script.google.com/macros/s/AKfycbw-DZp1Q1Ad8tQCn5N3B4RJlYqGArQH5_pVGrH3wHLnne6gojVf0gV5c3s9fG2mVqTizw/exec"
       >
         <h3>Personal Details</h3>
-        <Form.Group controlId="fullname">
-          <Form.Label>Full Names</Form.Label>
+        <Form.Group size="lg" controlId="email">
+          <Form.Label>Email</Form.Label>
           <Form.Control
-            type="text"
-            name="fullname"
-            placeholder="Full Names"
+            autoFocus
+            type="email"
+            name="email"
             onChange={handlechange}
-            fullname={data}
-            value={data.fullname}
+            value={state.email}
           />
-        </Form.Group>
-        <Form.Group controlId="lastname">
-          <Form.Label>Last Name</Form.Label>
-          <Form.Control
-            type="text"
-            name="lastname"
-            placeholder="Last Name"
-            onChange={handlechange}
-            lastname={data}
-            value={data.lastname}
-          />
-        </Form.Group>
-        <Form.Group controlId="#dateofbirth">
-          <Form.Label>Selcet Your Date Of Birth</Form.Label>
-          <Form.Control
-            type="date"
-            name="dateofbirth"
-            placeholder="Date of Birth"
-            onChange={handlechange}
-            dateofbirth={data}
-            value={data.dateofbirth}
-          />
-        </Form.Group>
-        <Form.Group controlId="adress">
-          <Form.Label>Your Home Address</Form.Label>
-          <Form.Control
-            type="text"
-            name="adress"
-            placeholder="Address"
-            onChange={handlechange}
-            adress={data}
-            value={data.adress}
-          />
-        </Form.Group>
-        <Form.Group controlId="cellno">
-          <Form.Label>Your Cellphone Number</Form.Label>
-          <Form.Control
-            type="tel"
-            name="cellno"
-            placeholder="Cellphone Number"
-            onChange={handlechange}
-            cellno={data}
-            value={data.cellno}
-          />
-        </Form.Group>
-        <Form.Group controlId="#econtact">
-          <Form.Label>Emergency Contact Name</Form.Label>
-          <Form.Control
-            type="text"
-            name="econtact"
-            placeholder="Emergency Contact Name"
-            onChange={handlechange}
-            econtact={data}
-            value={data.econtact}
-          />
-        </Form.Group>
-        <Form.Group controlId="ecellno">
-          <Form.Label>Emergency Contact Number</Form.Label>
-          <Form.Control
-            type="tel"
-            name="ecellno"
-            placeholder="Emergency Contact Num"
-            onChange={handlechange}
-            ecellno={data}
-            value={data.ecellno}
-          />
-        </Form.Group>
-        <Form.Group controlId="relationship">
-          <Form.Label>Relationship To Member</Form.Label>
-          <Form.Control
-            as="select"
-            name="relationship"
-            placeholder="Relationship To Member"
-            onChange={handlechange}
-            relationship={data}
-            value={data.relationship}
-          >
-            <option>---Select One---</option>
-            <option>Spouse</option>
-            <option>Mother</option>
-            <option>Father</option>
-            <option>Brother</option>
-            <option>Sister</option>
-            <option>Friend</option>
-            <option>Other</option>
-          </Form.Control>
         </Form.Group>
         <Form.Group controlId="familyAndFriends1">
           <h3>Family and Friends</h3>
@@ -120,9 +34,9 @@ function GeneralHealthAssessmentPage({ data, handlechange }) {
             <Form.Check
               label="Almost always"
               type="radio"
-              name="iHaveSomeoneToTalkTo"
+              name="ihavesomeonetotalkto"
               value="4"
-              checked={data.iHaveSomeoneToTalkTo === '4'}
+              checked={state.ihavesomeonetotalkto === '4'}
               onChange={handlechange}
             />
           </Form.Label>
@@ -131,9 +45,9 @@ function GeneralHealthAssessmentPage({ data, handlechange }) {
             <Form.Check
               label="Sometimes"
               type="radio"
-              name="iHaveSomeoneToTalkTo"
+              name="ihavesomeonetotalkto"
               value="2"
-              checked={data.iHaveSomeoneToTalkTo === '2'}
+              checked={state.ihavesomeonetotalkto === '2'}
               onChange={handlechange}
             />
           </Form.Label>
@@ -142,9 +56,9 @@ function GeneralHealthAssessmentPage({ data, handlechange }) {
             <Form.Check
               label="Hardly ever"
               type="radio"
-              name="iHaveSomeoneToTalkTo"
+              name="ihavesomeonetotalkto"
               value="0"
-              checked={data.iHaveSomeoneToTalkTo === '0'}
+              checked={state.ihavesomeonetotalkto === '0'}
               onChange={handlechange}
             />
           </Form.Label>
@@ -155,9 +69,9 @@ function GeneralHealthAssessmentPage({ data, handlechange }) {
             <Form.Check
               label="Almost always"
               type="radio"
-              name="giveAndReceiveAffection"
+              name="giveandreceiveaffection"
               value="4"
-              checked={data.giveAndReceiveAffection === '4'}
+              checked={state.giveandreceiveaffection === '4'}
               onChange={handlechange}
             />
           </Form.Label>
@@ -166,9 +80,9 @@ function GeneralHealthAssessmentPage({ data, handlechange }) {
             <Form.Check
               label="Sometimes"
               type="radio"
-              name="giveAndReceiveAffection"
+              name="giveandreceiveaffection"
               value="2"
-              checked={data.giveAndReceiveAffection === '2'}
+              checked={state.giveandreceiveaffection === '2'}
               onChange={handlechange}
             />
           </Form.Label>
@@ -177,9 +91,9 @@ function GeneralHealthAssessmentPage({ data, handlechange }) {
             <Form.Check
               label="Hardly ever"
               type="radio"
-              name="giveAndReceiveAffection"
+              name="giveandreceiveaffection"
               value="0"
-              checked={data.giveAndReceiveAffection === '0'}
+              checked={state.giveandreceiveaffection === '0'}
               onChange={handlechange}
             />
           </Form.Label>
@@ -191,9 +105,9 @@ function GeneralHealthAssessmentPage({ data, handlechange }) {
             <Form.Check
               label="Almost always"
               type="radio"
-              name="iAmPhysicallyActive"
+              name="iamphysicallyactive"
               value="4"
-              checked={data.iAmPhysicallyActive === '4'}
+              checked={state.iamphysicallyactive === '4'}
               onChange={handlechange}
             />
           </Form.Label>
@@ -202,9 +116,9 @@ function GeneralHealthAssessmentPage({ data, handlechange }) {
             <Form.Check
               label="Sometimes"
               type="radio"
-              name="iAmPhysicallyActive"
+              name="iamphysicallyactive"
               value="2"
-              checked={data.iAmPhysicallyActive === '2'}
+              checked={state.iamphysicallyactive === '2'}
               onChange={handlechange}
             />
           </Form.Label>
@@ -213,9 +127,9 @@ function GeneralHealthAssessmentPage({ data, handlechange }) {
             <Form.Check
               label="Hardly ever"
               type="radio"
-              name="iAmPhysicallyActive"
+              name="iamphysicallyactive"
               value="0"
-              checked={data.iAmPhysicallyActive === '0'}
+              checked={state.iamphysicallyactive === '0'}
               onChange={handlechange}
             />
           </Form.Label>
@@ -228,9 +142,9 @@ function GeneralHealthAssessmentPage({ data, handlechange }) {
             <Form.Check
               label="Almost always"
               type="radio"
-              name="iExercise"
+              name="iexercise"
               value="4"
-              checked={data.iExercise === '4'}
+              checked={state.iexercise === '4'}
               onChange={handlechange}
             />
           </Form.Label>
@@ -239,9 +153,9 @@ function GeneralHealthAssessmentPage({ data, handlechange }) {
             <Form.Check
               label="Sometimes"
               type="radio"
-              name="iExercise"
+              name="iexercise"
               value="2"
-              checked={data.iExercise === '2'}
+              checked={state.iexercise === '2'}
               onChange={handlechange}
             />
           </Form.Label>
@@ -250,9 +164,9 @@ function GeneralHealthAssessmentPage({ data, handlechange }) {
             <Form.Check
               label="Hardly ever"
               type="radio"
-              name="iExercise"
+              name="iexercise"
               value="0"
-              checked={data.iExercise === '0'}
+              checked={state.iexercise === '0'}
               onChange={handlechange}
             />
           </Form.Label>
@@ -263,9 +177,9 @@ function GeneralHealthAssessmentPage({ data, handlechange }) {
             <Form.Check
               label="Almost always"
               type="radio"
-              name="useSeatbelts"
+              name="useseatbelts"
               value="4"
-              checked={data.useSeatbelts === '4'}
+              checked={state.useseatbelts === '4'}
               onChange={handlechange}
             />
           </Form.Label>
@@ -274,9 +188,9 @@ function GeneralHealthAssessmentPage({ data, handlechange }) {
             <Form.Check
               label="Sometimes"
               type="radio"
-              name="useSeatbelts"
+              name="useseatbelts"
               value="2"
-              checked={data.useSeatbelts === '2'}
+              checked={state.useseatbelts === '2'}
               onChange={handlechange}
             />
           </Form.Label>
@@ -285,9 +199,9 @@ function GeneralHealthAssessmentPage({ data, handlechange }) {
             <Form.Check
               label="Hardly ever"
               type="radio"
-              name="useSeatbelts"
+              name="useseatbelts"
               value="0"
-              checked={data.useSeatbelts === '0'}
+              checked={state.useseatbelts === '0'}
               onChange={handlechange}
             />
           </Form.Label>
@@ -299,9 +213,9 @@ function GeneralHealthAssessmentPage({ data, handlechange }) {
             <Form.Check
               label="Almost always"
               type="radio"
-              name="iSleepWell"
+              name="isleepwell"
               value="4"
-              checked={data.iSleepWell === '4'}
+              checked={state.isleepwell === '4'}
               onChange={handlechange}
             />
           </Form.Label>
@@ -310,9 +224,9 @@ function GeneralHealthAssessmentPage({ data, handlechange }) {
             <Form.Check
               label="Sometimes"
               type="radio"
-              name="iSleepWell"
+              name="isleepwell"
               value="2"
-              checked={data.iSleepWell === '2'}
+              checked={state.isleepwell === '2'}
               onChange={handlechange}
             />
           </Form.Label>
@@ -321,9 +235,9 @@ function GeneralHealthAssessmentPage({ data, handlechange }) {
             <Form.Check
               label="Hardly ever"
               type="radio"
-              name="iSleepWell"
+              name="isleepwell"
               value="0"
-              checked={data.iSleepWell === '0'}
+              checked={state.isleepwell === '0'}
               onChange={handlechange}
             />
           </Form.Label>
@@ -335,9 +249,9 @@ function GeneralHealthAssessmentPage({ data, handlechange }) {
             <Form.Check
               label="Almost always"
               type="radio"
-              name="oftenEatExcess"
+              name="ofteneatexcess"
               value="4"
-              checked={data.oftenEatExcess === '4'}
+              checked={state.ofteneatexcess === '4'}
               onChange={handlechange}
             />
           </Form.Label>
@@ -346,9 +260,9 @@ function GeneralHealthAssessmentPage({ data, handlechange }) {
             <Form.Check
               label="Sometimes"
               type="radio"
-              name="oftenEatExcess"
+              name="ofteneatexcess"
               value="2"
-              checked={data.oftenEatExcess === '2'}
+              checked={state.ofteneatexcess === '2'}
               onChange={handlechange}
             />
           </Form.Label>
@@ -357,9 +271,9 @@ function GeneralHealthAssessmentPage({ data, handlechange }) {
             <Form.Check
               label="Hardly ever"
               type="radio"
-              name="oftenEatExcess"
+              name="ofteneatexcess"
               value="0"
-              checked={data.oftenEatExcess === '0'}
+              checked={state.ofteneatexcess === '0'}
               onChange={handlechange}
             />
           </Form.Label>
@@ -370,8 +284,8 @@ function GeneralHealthAssessmentPage({ data, handlechange }) {
             <Form.Check
               type="checkbox"
               label="I Am Over weight"
-              name="overWeight"
-              checked={data.overWeight}
+              name="overweight"
+              checked={state.overweight}
               onChange={handlechange}
             />
           </Form.Group>
@@ -379,8 +293,8 @@ function GeneralHealthAssessmentPage({ data, handlechange }) {
             <Form.Check
               type="checkbox"
               label="I Am Under Weight"
-              name="underWeight"
-              checked={data.underWeight}
+              name="underweight"
+              checked={state.underweight}
               onChange={handlechange}
             />
           </Form.Group>
@@ -388,9 +302,9 @@ function GeneralHealthAssessmentPage({ data, handlechange }) {
             <Form.Check
               label="Four"
               type="radio"
-              name="myIdealWeight"
+              name="myidealweight"
               value="4"
-              checked={data.myIdealWeight === '4'}
+              checked={state.myidealweight === '4'}
               onChange={handlechange}
             />
           </Form.Label>
@@ -399,9 +313,9 @@ function GeneralHealthAssessmentPage({ data, handlechange }) {
             <Form.Check
               label="Eight"
               type="radio"
-              name="myIdealWeight"
+              name="myidealweight"
               value="2"
-              checked={data.myIdealWeight === '2'}
+              checked={state.myidealweight === '2'}
               onChange={handlechange}
             />
           </Form.Label>
@@ -410,9 +324,9 @@ function GeneralHealthAssessmentPage({ data, handlechange }) {
             <Form.Check
               label="More than eight"
               type="radio"
-              name="myIdealWeight"
+              name="myidealweight"
               value="0"
-              checked={data.myIdealWeight === '0'}
+              checked={state.myidealweight === '0'}
               onChange={handlechange}
             />
           </Form.Label>
@@ -424,9 +338,9 @@ function GeneralHealthAssessmentPage({ data, handlechange }) {
             <Form.Check
               label="Not In Five Years"
               type="radio"
-              name="smokedTabacco"
+              name="smokedtabacco"
               value="4"
-              checked={data.smokedTabacco === '4'}
+              checked={state.smokedtabacco === '4'}
               onChange={handlechange}
             />
           </Form.Label>
@@ -435,9 +349,9 @@ function GeneralHealthAssessmentPage({ data, handlechange }) {
             <Form.Check
               label="Not In One Year"
               type="radio"
-              name="smokedTabacco"
+              name="smokedtabacco"
               value="2"
-              checked={data.smokedTabacco === '2'}
+              checked={state.smokedtabacco === '2'}
               onChange={handlechange}
             />
           </Form.Label>
@@ -446,9 +360,9 @@ function GeneralHealthAssessmentPage({ data, handlechange }) {
             <Form.Check
               label="In The Last Year"
               type="radio"
-              name="smokedTabacco"
+              name="smokedtabacco"
               value="0"
-              checked={data.smokedTabacco === '0'}
+              checked={state.smokedtabacco === '0'}
               onChange={handlechange}
             />
           </Form.Label>
@@ -459,9 +373,9 @@ function GeneralHealthAssessmentPage({ data, handlechange }) {
             <Form.Check
               label="I don't smoke"
               type="radio"
-              name="cigarettesPerday"
+              name="cigarettesperday"
               value="4"
-              checked={data.cigarettesPerday === '4'}
+              checked={state.cigarettesperday === '4'}
               onChange={handlechange}
             />
           </Form.Label>
@@ -470,9 +384,9 @@ function GeneralHealthAssessmentPage({ data, handlechange }) {
             <Form.Check
               label="Five To Ten"
               type="radio"
-              name="cigarettesPerday"
+              name="cigarettesperday"
               value="2"
-              checked={data.cigarettesPerday === '2'}
+              checked={state.cigarettesperday === '2'}
               onChange={handlechange}
             />
           </Form.Label>
@@ -481,9 +395,9 @@ function GeneralHealthAssessmentPage({ data, handlechange }) {
             <Form.Check
               label="More than Ten"
               type="radio"
-              name="cigarettesPerday"
+              name="cigarettesperday"
               value="0"
-              checked={data.cigarettesPerday === '0'}
+              checked={state.cigarettesperday === '0'}
               onChange={handlechange}
             />
           </Form.Label>
@@ -494,9 +408,9 @@ function GeneralHealthAssessmentPage({ data, handlechange }) {
             <Form.Check
               label="Never"
               type="radio"
-              name="illegalDrugs"
+              name="illegaldrugs"
               value="4"
-              checked={data.illegalDrugs === '4'}
+              checked={state.illegaldrugs === '4'}
               onChange={handlechange}
             />
           </Form.Label>
@@ -505,9 +419,9 @@ function GeneralHealthAssessmentPage({ data, handlechange }) {
             <Form.Check
               label="Not In one Year"
               type="radio"
-              name="illegalDrugs"
+              name="illegaldrugs"
               value="2"
-              checked={data.illegalDrugs === '2'}
+              checked={state.illegaldrugs === '2'}
               onChange={handlechange}
             />
           </Form.Label>
@@ -516,9 +430,9 @@ function GeneralHealthAssessmentPage({ data, handlechange }) {
             <Form.Check
               label="In Past Year"
               type="radio"
-              name="illegalDrugs"
+              name="illegaldrugs"
               value="0"
-              checked={data.illegalDrugs === '0'}
+              checked={state.illegaldrugs === '0'}
               onChange={handlechange}
             />
           </Form.Label>
@@ -529,9 +443,9 @@ function GeneralHealthAssessmentPage({ data, handlechange }) {
             <Form.Check
               label="Never"
               type="radio"
-              name="overuseMedication"
+              name="overusemedication"
               value="4"
-              checked={data.overuseMedication === '4'}
+              checked={state.overusemedication === '4'}
               onChange={handlechange}
             />
           </Form.Label>
@@ -540,9 +454,9 @@ function GeneralHealthAssessmentPage({ data, handlechange }) {
             <Form.Check
               label="Not In One Year"
               type="radio"
-              name="overuseMedication"
+              name="overusemedication"
               value="2"
-              checked={data.overuseMedication === '2'}
+              checked={state.overusemedication === '2'}
               onChange={handlechange}
             />
           </Form.Label>
@@ -551,9 +465,9 @@ function GeneralHealthAssessmentPage({ data, handlechange }) {
             <Form.Check
               label="In Past Year"
               type="radio"
-              name="overuseMedication"
+              name="overusemedication"
               value="0"
-              checked={data.overuseMedication === '0'}
+              checked={state.overusemedication === '0'}
               onChange={handlechange}
             />
           </Form.Label>
@@ -568,9 +482,9 @@ function GeneralHealthAssessmentPage({ data, handlechange }) {
             <Form.Check
               label="Less Than Three"
               type="radio"
-              name="caffeineContainingDrinks"
+              name="caffeinecontainingdrinks"
               value="4"
-              checked={data.caffeineContainingDrinks === '4'}
+              checked={state.caffeinecontainingdrinks === '4'}
               onChange={handlechange}
             />
           </Form.Label>
@@ -579,9 +493,9 @@ function GeneralHealthAssessmentPage({ data, handlechange }) {
             <Form.Check
               label="Three To Six"
               type="radio"
-              name="caffeineContainingDrinks"
+              name="caffeinecontainingdrinks"
               value="2"
-              checked={data.caffeineContainingDrinks === '2'}
+              checked={state.caffeinecontainingdrinks === '2'}
               onChange={handlechange}
             />
           </Form.Label>
@@ -590,9 +504,9 @@ function GeneralHealthAssessmentPage({ data, handlechange }) {
             <Form.Check
               label="More Than Six"
               type="radio"
-              name="caffeineContainingDrinks"
+              name="caffeinecontainingdrinks"
               value="0"
-              checked={data.caffeineContainingDrinks === '0'}
+              checked={state.caffeinecontainingdrinks === '0'}
               onChange={handlechange}
             />
           </Form.Label>
@@ -604,9 +518,9 @@ function GeneralHealthAssessmentPage({ data, handlechange }) {
             <Form.Check
               label="Seven Or Less Drinks"
               type="radio"
-              name="averageAlcoholIntake"
+              name="averagealcoholintake"
               value="4"
-              checked={data.averageAlcoholIntake === '4'}
+              checked={state.averagealcoholintake === '4'}
               onChange={handlechange}
             />
           </Form.Label>
@@ -615,9 +529,9 @@ function GeneralHealthAssessmentPage({ data, handlechange }) {
             <Form.Check
               label="Eight To Thirteen"
               type="radio"
-              name="averageAlcoholIntake"
+              name="averagealcoholintake"
               value="2"
-              checked={data.averageAlcoholIntake === '2'}
+              checked={state.averagealcoholintake === '2'}
               onChange={handlechange}
             />
           </Form.Label>
@@ -626,9 +540,9 @@ function GeneralHealthAssessmentPage({ data, handlechange }) {
             <Form.Check
               label="Fourteen or more"
               type="radio"
-              name="averageAlcoholIntake"
+              name="averagealcoholintake"
               value="0"
-              checked={data.averageAlcoholIntake === '0'}
+              checked={state.averagealcoholintake === '0'}
               onChange={handlechange}
             />
           </Form.Label>
@@ -639,9 +553,9 @@ function GeneralHealthAssessmentPage({ data, handlechange }) {
             <Form.Check
               label="Never"
               type="radio"
-              name="moreThanFourDrinks"
+              name="morethanfourdrinks"
               value="4"
-              checked={data.moreThanFourDrinks === '4'}
+              checked={state.morethanfourdrinks === '4'}
               onChange={handlechange}
             />
           </Form.Label>
@@ -650,9 +564,9 @@ function GeneralHealthAssessmentPage({ data, handlechange }) {
             <Form.Check
               label="Occasionally"
               type="radio"
-              name="moreThanFourDrinks"
+              name="morethanfourdrinks"
               value="2"
-              checked={data.moreThanFourDrinks === '2'}
+              checked={state.morethanfourdrinks === '2'}
               onChange={handlechange}
             />
           </Form.Label>
@@ -661,9 +575,9 @@ function GeneralHealthAssessmentPage({ data, handlechange }) {
             <Form.Check
               label="Fairly Often"
               type="radio"
-              name="moreThanFourDrinks"
+              name="morethanfourdrinks"
               value="0"
-              checked={data.moreThanFourDrinks === '0'}
+              checked={state.morethanfourdrinks === '0'}
               onChange={handlechange}
             />
           </Form.Label>
@@ -674,9 +588,9 @@ function GeneralHealthAssessmentPage({ data, handlechange }) {
             <Form.Check
               label="Never"
               type="radio"
-              name="driveAfterDrinking"
+              name="driveafterdrinking"
               value="4"
-              checked={data.driveAfterDrinking === '4'}
+              checked={state.driveafterdrinking === '4'}
               onChange={handlechange}
             />
           </Form.Label>
@@ -685,9 +599,9 @@ function GeneralHealthAssessmentPage({ data, handlechange }) {
             <Form.Check
               label="Occasionally"
               type="radio"
-              name="driveAfterDrinking"
+              name="driveafterdrinking"
               value="2"
-              checked={data.driveAfterDrinking === '2'}
+              checked={state.driveafterdrinking === '2'}
               onChange={handlechange}
             />
           </Form.Label>
@@ -696,9 +610,9 @@ function GeneralHealthAssessmentPage({ data, handlechange }) {
             <Form.Check
               label="Fairly Often"
               type="radio"
-              name="driveAfterDrinking"
+              name="driveafterdrinking"
               value="0"
-              checked={data.driveAfterDrinking === '0'}
+              checked={state.driveafterdrinking === '0'}
               onChange={handlechange}
             />
           </Form.Label>
@@ -710,9 +624,9 @@ function GeneralHealthAssessmentPage({ data, handlechange }) {
             <Form.Check
               label="Almost Allways"
               type="radio"
-              name="copeWithStress"
+              name="copewithstress"
               value="4"
-              checked={data.copeWithStress === '4'}
+              checked={state.copewithstress === '4'}
               onChange={handlechange}
             />
           </Form.Label>
@@ -721,9 +635,9 @@ function GeneralHealthAssessmentPage({ data, handlechange }) {
             <Form.Check
               label="Sometimes"
               type="radio"
-              name="copeWithStress"
+              name="copewithstress"
               value="2"
-              checked={data.copeWithStress === '2'}
+              checked={state.copewithstress === '2'}
               onChange={handlechange}
             />
           </Form.Label>
@@ -732,9 +646,9 @@ function GeneralHealthAssessmentPage({ data, handlechange }) {
             <Form.Check
               label="Hardly Ever"
               type="radio"
-              name="copeWithStress"
+              name="copewithstress"
               value="0"
-              checked={data.copeWithStress === '0'}
+              checked={state.copewithstress === '0'}
               onChange={handlechange}
             />
           </Form.Label>
@@ -745,9 +659,9 @@ function GeneralHealthAssessmentPage({ data, handlechange }) {
             <Form.Check
               label="Almost Allways"
               type="radio"
-              name="leisureTime"
+              name="leisuretime"
               value="4"
-              checked={data.leisureTime === '4'}
+              checked={state.leisuretime === '4'}
               onChange={handlechange}
             />
           </Form.Label>
@@ -756,9 +670,9 @@ function GeneralHealthAssessmentPage({ data, handlechange }) {
             <Form.Check
               label="Sometimes"
               type="radio"
-              name="leisureTime"
+              name="leisuretime"
               value="2"
-              checked={data.leisureTime === '2'}
+              checked={state.leisuretime === '2'}
               onChange={handlechange}
             />
           </Form.Label>
@@ -767,9 +681,9 @@ function GeneralHealthAssessmentPage({ data, handlechange }) {
             <Form.Check
               label="Hardly Ever"
               type="radio"
-              name="leisureTime"
+              name="leisuretime"
               value="0"
-              checked={data.leisureTime === '0'}
+              checked={state.leisuretime === '0'}
               onChange={handlechange}
             />
           </Form.Label>
@@ -780,9 +694,9 @@ function GeneralHealthAssessmentPage({ data, handlechange }) {
             <Form.Check
               label="Hardly Ever"
               type="radio"
-              name="inAHurry"
+              name="inahurry"
               value="4"
-              checked={data.inAHurry === '4'}
+              checked={state.inahurry === '4'}
               onChange={handlechange}
             />
           </Form.Label>
@@ -791,9 +705,9 @@ function GeneralHealthAssessmentPage({ data, handlechange }) {
             <Form.Check
               label="Sometimes"
               type="radio"
-              name="inAHurry"
+              name="inahurry"
               value="2"
-              checked={data.inAHurry === '2'}
+              checked={state.inahurry === '2'}
               onChange={handlechange}
             />
           </Form.Label>
@@ -802,9 +716,9 @@ function GeneralHealthAssessmentPage({ data, handlechange }) {
             <Form.Check
               label="Fairly Often"
               type="radio"
-              name="inAHurry"
+              name="inahurry"
               value="0"
-              checked={data.inAHurry === '0'}
+              checked={state.inahurry === '0'}
               onChange={handlechange}
             />
           </Form.Label>
@@ -816,9 +730,9 @@ function GeneralHealthAssessmentPage({ data, handlechange }) {
             <Form.Check
               label="Hardly Ever"
               type="radio"
-              name="angryHostile"
+              name="angryhostile"
               value="4"
-              checked={data.angryHostile === '4'}
+              checked={state.angryhostile === '4'}
               onChange={handlechange}
             />
           </Form.Label>
@@ -827,9 +741,9 @@ function GeneralHealthAssessmentPage({ data, handlechange }) {
             <Form.Check
               label="Sometimes"
               type="radio"
-              name="angryHostile"
+              name="angryhostile"
               value="2"
-              checked={data.angryHostile === '2'}
+              checked={state.angryhostile === '2'}
               onChange={handlechange}
             />
           </Form.Label>
@@ -838,9 +752,9 @@ function GeneralHealthAssessmentPage({ data, handlechange }) {
             <Form.Check
               label="Fairly Often"
               type="radio"
-              name="angryHostile"
+              name="angryhostile"
               value="0"
-              checked={data.angryHostile === '0'}
+              checked={state.angryhostile === '0'}
               onChange={handlechange}
             />
           </Form.Label>
@@ -851,9 +765,9 @@ function GeneralHealthAssessmentPage({ data, handlechange }) {
             <Form.Check
               label="Hardly Ever"
               type="radio"
-              name="positiveOptimistic"
+              name="positiveoptimistic"
               value="4"
-              checked={data.positiveOptimistic === '4'}
+              checked={state.positiveoptimistic === '4'}
               onChange={handlechange}
             />
           </Form.Label>
@@ -862,9 +776,9 @@ function GeneralHealthAssessmentPage({ data, handlechange }) {
             <Form.Check
               label="Sometimes"
               type="radio"
-              name="positiveOptimistic"
+              name="positiveoptimistic"
               value="2"
-              checked={data.positiveOptimistic === '2'}
+              checked={state.positiveoptimistic === '2'}
               onChange={handlechange}
             />
           </Form.Label>
@@ -873,9 +787,9 @@ function GeneralHealthAssessmentPage({ data, handlechange }) {
             <Form.Check
               label="Fairly Often"
               type="radio"
-              name="positiveOptimistic"
+              name="positiveoptimistic"
               value="0"
-              checked={data.positiveOptimistic === '0'}
+              checked={state.positiveoptimistic === '0'}
               onChange={handlechange}
             />
           </Form.Label>
@@ -886,9 +800,9 @@ function GeneralHealthAssessmentPage({ data, handlechange }) {
             <Form.Check
               label="Hardly Ever"
               type="radio"
-              name="tenseUptight"
+              name="tenseuptight"
               value="4"
-              checked={data.tenseUptight === '4'}
+              checked={state.tenseuptight === '4'}
               onChange={handlechange}
             />
           </Form.Label>
@@ -897,9 +811,9 @@ function GeneralHealthAssessmentPage({ data, handlechange }) {
             <Form.Check
               label="Sometimes"
               type="radio"
-              name="tenseUptight"
+              name="tenseuptight"
               value="2"
-              checked={data.tenseUptight === '2'}
+              checked={state.tenseuptight === '2'}
               onChange={handlechange}
             />
           </Form.Label>
@@ -908,9 +822,9 @@ function GeneralHealthAssessmentPage({ data, handlechange }) {
             <Form.Check
               label="Fairly Often"
               type="radio"
-              name="tenseUptight"
+              name="tenseuptight"
               value="0"
-              checked={data.tenseUptight === '0'}
+              checked={state.tenseuptight === '0'}
               onChange={handlechange}
             />
           </Form.Label>
@@ -921,9 +835,9 @@ function GeneralHealthAssessmentPage({ data, handlechange }) {
             <Form.Check
               label="Hardly Ever"
               type="radio"
-              name="sadDepressed"
+              name="saddepressed"
               value="4"
-              checked={data.sadDepressed === '4'}
+              checked={state.saddepressed === '4'}
               onChange={handlechange}
             />
           </Form.Label>
@@ -932,9 +846,9 @@ function GeneralHealthAssessmentPage({ data, handlechange }) {
             <Form.Check
               label="Sometimes"
               type="radio"
-              name="sadDepressed"
+              name="saddepressed"
               value="2"
-              checked={data.sadDepressed === '2'}
+              checked={state.saddepressed === '2'}
               onChange={handlechange}
             />
           </Form.Label>
@@ -943,9 +857,9 @@ function GeneralHealthAssessmentPage({ data, handlechange }) {
             <Form.Check
               label="Fairly Often"
               type="radio"
-              name="sadDepressed"
+              name="saddepressed"
               value="0"
-              checked={data.sadDepressed === '0'}
+              checked={state.saddepressed === '0'}
               onChange={handlechange}
             />
           </Form.Label>
@@ -956,9 +870,9 @@ function GeneralHealthAssessmentPage({ data, handlechange }) {
             <Form.Check
               label="Almost Always"
               type="radio"
-              name="satisfiedJobRole"
+              name="satisfiedjobrole"
               value="4"
-              checked={data.satisfiedJobRole === '4'}
+              checked={state.satisfiedjobrole === '4'}
               onChange={handlechange}
             />
           </Form.Label>
@@ -967,9 +881,9 @@ function GeneralHealthAssessmentPage({ data, handlechange }) {
             <Form.Check
               label="Sometimes"
               type="radio"
-              name="satisfiedJobRole"
+              name="satisfiedjobrole"
               value="2"
-              checked={data.satisfiedJobRole === '2'}
+              checked={state.satisfiedjobrole === '2'}
               onChange={handlechange}
             />
           </Form.Label>
@@ -978,14 +892,16 @@ function GeneralHealthAssessmentPage({ data, handlechange }) {
             <Form.Check
               label="Hardley Ever"
               type="radio"
-              name="satisfiedJobRole"
+              name="satisfiedjobrole"
               value="0"
-              checked={data.satisfiedJobRole === '0'}
+              checked={state.satisfiedjobrole === '0'}
               onChange={handlechange}
             />
           </Form.Label>
         </Form.Group>
-        <button type="submit">Submit</button>
+        <Button type="submit" value="Register" variant="primary" onClick={handlesubmitgoalsettingform}>
+          Submit
+        </Button>
       </Form>
     </div>
   );
@@ -993,7 +909,7 @@ function GeneralHealthAssessmentPage({ data, handlechange }) {
 
 GeneralHealthAssessmentPage.propTypes = {
   handlechange: PropTypes.func.isRequired,
-  data: PropTypes.string.isRequired,
+  state: PropTypes.string.isRequired,
 };
 
 export default GeneralHealthAssessmentPage;

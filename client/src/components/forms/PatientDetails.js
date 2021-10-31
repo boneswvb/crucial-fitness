@@ -16,18 +16,19 @@ function PatientDetails({
 }) {
   return (
     <div>
-      <Button variant="secondary" onClick={handleshow}>Update Personal Details</Button>
+      <Button variant="secondary" onClick={handleshow}>Submit Personal Details</Button>
+      <br />
       <Modal show={show} onHide={handleclose}>
         <Modal.Header closeButton>
           <Modal.Title>Personal Details</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form
-          // id="gform"
-          // method="POST"
-          // class="pure-form pure-form-stacked"
-          // data-email="from_email@example.com"
-          // action="https://script.google.com/macros/s/AKfycbw-DZp1Q1Ad8tQCn5N3B4RJlYqGArQH5_pVGrH3wHLnne6gojVf0gV5c3s9fG2mVqTizw/exec"
+          id="gform"
+          method="POST"
+          class="pure-form pure-form-stacked"
+          data-email="from_email@example.com"
+          action="https://script.google.com/macros/s/AKfycbw-DZp1Q1Ad8tQCn5N3B4RJlYqGArQH5_pVGrH3wHLnne6gojVf0gV5c3s9fG2mVqTizw/exec"
           >
             <h3>Personal Details</h3>
             <Form.Group size="lg" controlId="email">

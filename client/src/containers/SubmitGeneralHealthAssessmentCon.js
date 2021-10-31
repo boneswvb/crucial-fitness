@@ -1,16 +1,20 @@
 import React, { useState } from "react";
 
-import GoalSettingForm from "../components/forms/GoalSettingForm";
+import GeneralHealthAssessmentForm from "../components/forms/GeneralHealthAssessmentForm";
 
-function SubmitGoalsettingForm() {  
-  const [formState, setFormState] = useState("");
+function SubmitGeneralHealthAssessmentCon() {  
+  const [formState, setFormState] = useState({});
   const handleChange = (e) => {
-    const { name, value, type, checked } = e.target;
-    return type === "checkbox"
-      ? setFormState({
-        ...formState,
-        [name]: checked,
-      })
+    const {
+      name,
+      value,
+      type,
+      checked,
+    } = e.target;
+    return type === 'checkbox' ? setFormState({
+      ...formState,
+      [name]: checked,
+    })
       : setFormState({
         ...formState,
         [name]: value,
@@ -24,10 +28,11 @@ function SubmitGoalsettingForm() {
     hardesttochange,
   } = formState;
 
-  const handleSubmitGoalsettingForm = async (e) => {
+  const handleSubmitGeneralHealthAssessmentForm = async (e) => {
     e.preventDefault();
     try {
-      const date = Date().slice(8, 10) + Date().slice(3, 7) + Date().slice(10, 15);
+      const date =
+        Date().slice(8, 10) + Date().slice(3, 7) + Date().slice(10, 15);
       const body = {
         email,
         lifstylechanges,
@@ -47,13 +52,13 @@ function SubmitGoalsettingForm() {
   };
   return (
     <div>
-      <GoalSettingForm
+      <GeneralHealthAssessmentForm
         handlechange={handleChange}
         state={formState}
-        handlesubmitgoalsettingform={handleSubmitGoalsettingForm}
+        handlesubmitgoalsettingform={handleSubmitGeneralHealthAssessmentForm}
       />
     </div>
   );
 }
 
-export default SubmitGoalsettingForm;
+export default SubmitGeneralHealthAssessmentCon;

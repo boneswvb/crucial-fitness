@@ -61,7 +61,13 @@ function Logon() {
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-          <Button type="submit" value="Register" variant="primary" onClick={(e) => getUserInfo(e)}>
+          <Button 
+            type="submit" 
+            value="Register" 
+            variant="primary" 
+            onClick={handleClose}
+            onClick={(e) => getUserInfo(e)}
+          >
             Log on
           </Button>
         </Modal.Footer>

@@ -1,117 +1,31 @@
 import React from 'react';
 
-import { Form } from 'react-bootstrap';
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
 
 import PropTypes from 'prop-types';
 
-function LifeStyleAssForm({ handleChange, state }) {
+function LifeStyleAssForm({ handlechange, state, handlesubmitlifeStyleassform }) {
+  console.log('state', state)
   return (
     <div className="container">
       <h1>Life Style Assessment</h1>
-      {/* <h3>Personal Details</h3> */}
-      <Form
-        id="gform"
-        method="POST"
-        class="pure-form pure-form-stacked"
-        data-email="from_email@example.com"
-        action="https://script.google.com/macros/s/AKfycbw-DZp1Q1Ad8tQCn5N3B4RJlYqGArQH5_pVGrH3wHLnne6gojVf0gV5c3s9fG2mVqTizw/exec"
+      <Form 
+      id="gform"
+      method="POST"
+      class="pure-form pure-form-stacked"
+      data-email="from_email@example.com"
+      action="https://script.google.com/macros/s/AKfycbw-DZp1Q1Ad8tQCn5N3B4RJlYqGArQH5_pVGrH3wHLnne6gojVf0gV5c3s9fG2mVqTizw/exec"
       >
-        <Form.Group controlId="fullname">
-          <Form.Label>Full Names</Form.Label>
+      <Form.Group size="lg" controlId="email">
+          <Form.Label>Email</Form.Label>
           <Form.Control
-            type="text"
-            name="fullname"
-            placeholder="Full Names"
-            onChange={handleChange}
-            fullname={state}
-            value={state.fullname}
+            autoFocus
+            type="email"
+            name="email"
+            onChange={handlechange}
+            value={state.email}
           />
-        </Form.Group>
-        <Form.Group controlId="lastname">
-          <Form.Label>Last Name</Form.Label>
-          <Form.Control
-            type="text"
-            name="lastname"
-            placeholder="Last Name"
-            onChange={handleChange}
-            lastname={state}
-            value={state.lastname}
-          />
-        </Form.Group>
-        <Form.Group controlId="#dateofbirth">
-          <Form.Label>Selcet Your Date Of Birth</Form.Label>
-          <Form.Control
-            type="date"
-            name="dateofbirth"
-            placeholder="Date of Birth"
-            onChange={handleChange}
-            dateofbirth={state}
-            value={state.dateofbirth}
-          />
-        </Form.Group>
-        <Form.Group controlId="adress">
-          <Form.Label>Your Home Address</Form.Label>
-          <Form.Control
-            type="text"
-            name="adress"
-            placeholder="Address"
-            onChange={handleChange}
-            adress={state}
-            value={state.adress}
-          />
-        </Form.Group>
-        <Form.Group controlId="cellno">
-          <Form.Label>Your Cellphone Number</Form.Label>
-          <Form.Control
-            type="tel"
-            name="cellno"
-            placeholder="Cellphone Number"
-            onChange={handleChange}
-            cellno={state}
-            value={state.cellno}
-          />
-        </Form.Group>
-        <Form.Group controlId="#econtact">
-          <Form.Label>Emergency Contact Name</Form.Label>
-          <Form.Control
-            type="text"
-            name="econtact"
-            placeholder="Emergency Contact Name"
-            onChange={handleChange}
-            econtact={state}
-            value={state.econtact}
-          />
-        </Form.Group>
-        <Form.Group controlId="ecellno">
-          <Form.Label>Emergency Contact Number</Form.Label>
-          <Form.Control
-            type="tel"
-            name="ecellno"
-            placeholder="Emergency Contact Num"
-            onChange={handleChange}
-            ecellno={state}
-            value={state.ecellno}
-          />
-        </Form.Group>
-        <Form.Group controlId="relationship">
-          <Form.Label>Relationship To Member</Form.Label>
-          <Form.Control
-            as="select"
-            name="relationship"
-            placeholder="Relationship To Member"
-            onChange={handleChange}
-            relationship={state}
-            value={state.relationship}
-          >
-            <option>---Select One---</option>
-            <option>Spouse</option>
-            <option>Mother</option>
-            <option>Father</option>
-            <option>Brother</option>
-            <option>Sister</option>
-            <option>Friend</option>
-            <option>Other</option>
-          </Form.Control>
         </Form.Group>
         <Form.Group controlId="curhealtproblems">
           <Form.Label>Current Healt Problems</Form.Label>
@@ -120,8 +34,7 @@ function LifeStyleAssForm({ handleChange, state }) {
             rows={3}
             name="curhealtproblems"
             placeholder="Current Healt Problems"
-            onChange={handleChange}
-            curhealtproblems={state}
+            onChange={handlechange}
             value={state.curhealtproblems}
           />
         </Form.Group>
@@ -132,8 +45,7 @@ function LifeStyleAssForm({ handleChange, state }) {
             rows={3}
             name="medicalhistory"
             placeholder="Medical History"
-            onChange={handleChange}
-            medicalhistory={state}
+            onChange={handlechange}
             value={state.medicalhistory}
           />
         </Form.Group>
@@ -144,8 +56,7 @@ function LifeStyleAssForm({ handleChange, state }) {
             rows={3}
             name="medsandsuppliments"
             placeholder="Medication and Suppliments"
-            onChange={handleChange}
-            medsandsuppliments={state}
+            onChange={handlechange}
             value={state.medsandsuppliments}
           />
         </Form.Group>
@@ -155,10 +66,9 @@ function LifeStyleAssForm({ handleChange, state }) {
             <Form.Label>Heart Disease</Form.Label>
             <Form.Control
               as="select"
-              name="heartDiseaseRelation"
+              name="heartdiseaserelation"
               placeholder="Family Member with History"
-              onChange={handleChange}
-              heartdiseaserelation={state}
+              onChange={handlechange}
               value={state.heartdiseaserelation}
             >
               <option>---Select One---</option>
@@ -178,10 +88,9 @@ function LifeStyleAssForm({ handleChange, state }) {
             <Form.Label>Diabetes Type 1</Form.Label>
             <Form.Control
               as="select"
-              name="diabetesType1Relation"
+              name="diabetestype1relation"
               placeholder="Family Member with History"
-              onChange={handleChange}
-              diabetestype1relation={state}
+              onChange={handlechange}
               value={state.diabetestype1relation}
             >
               <option>---Select One---</option>
@@ -201,11 +110,10 @@ function LifeStyleAssForm({ handleChange, state }) {
             <Form.Label>Diabetes Type 2</Form.Label>
             <Form.Control
               as="select"
-              name="diabetesType2Relation"
+              name="diabetestype2relation"
               placeholder="Family Member with History"
-              onChange={handleChange}
-              diabetestype1relation={state}
-              value={state.diabetestype1relation}
+              onChange={handlechange}
+              value={state.diabetestype2relation}
             >
               <option>---Select One---</option>
               <option>Not Applicable</option>
@@ -224,10 +132,9 @@ function LifeStyleAssForm({ handleChange, state }) {
             <Form.Label>High Blood Pressure</Form.Label>
             <Form.Control
               as="select"
-              name="highBloodPressureRelation"
+              name="highbloodpressurerelation"
               placeholder="Family Member with History"
-              onChange={handleChange}
-              highbloodpressurerelation={state}
+              onChange={handlechange}
               value={state.highbloodpressurerelation}
             >
               <option>---Select One---</option>
@@ -247,10 +154,9 @@ function LifeStyleAssForm({ handleChange, state }) {
             <Form.Label>High Cholesterol</Form.Label>
             <Form.Control
               as="select"
-              name="highCholesterolRelation"
+              name="highcholesterolrelation"
               placeholder="Family Member with History"
-              onChange={handleChange}
-              highcholesterolrelation={state}
+              onChange={handlechange}
               value={state.highcholesterolrelation}
             >
               <option>---Select One---</option>
@@ -270,10 +176,9 @@ function LifeStyleAssForm({ handleChange, state }) {
             <Form.Label>Thyroid Disease</Form.Label>
             <Form.Control
               as="select"
-              name="thyroidDiseaseRelation"
+              name="thyroiddiseaserelation"
               placeholder="Family Member with History"
-              onChange={handleChange}
-              thyroiddiseaserelation={state}
+              onChange={handlechange}
               value={state.thyroiddiseaserelation}
             >
               <option>---Select One---</option>
@@ -293,10 +198,9 @@ function LifeStyleAssForm({ handleChange, state }) {
             <Form.Label>Metabolic Syndrome</Form.Label>
             <Form.Control
               as="select"
-              name="metabolicSyndromeRelation"
+              name="metabolicsyndromerelation"
               placeholder="Family Member with History"
-              onChange={handleChange}
-              metabolicsyndromerelation={state}
+              onChange={handlechange}
               value={state.metabolicsyndromerelation}
             >
               <option>---Select One---</option>
@@ -312,14 +216,13 @@ function LifeStyleAssForm({ handleChange, state }) {
               <option>Aunt</option>
             </Form.Control>
           </Form.Group>
-          <Form.Group controlId="renalDiseaseRelation">
+          <Form.Group controlId="renaldiseaserelation">
             <Form.Label>Renal Disease</Form.Label>
             <Form.Control
               as="select"
-              name="renalDiseaseRelation"
+              name="renaldiseaserelation"
               placeholder="Family Member with History"
-              onChange={handleChange}
-              renaldiseaserelation={state}
+              onChange={handlechange}
               value={state.renaldiseaserelation}
             >
               <option>---Select One---</option>
@@ -339,10 +242,9 @@ function LifeStyleAssForm({ handleChange, state }) {
             <Form.Label>Liver Disease</Form.Label>
             <Form.Control
               as="select"
-              name="liverDiseaseRelation"
+              name="liverdiseaserelation"
               placeholder="Family Member with History"
-              onChange={handleChange}
-              liverdiseaserelation={state}
+              onChange={handlechange}
               value={state.liverdiseaserelation}
             >
               <option>---Select One---</option>
@@ -363,10 +265,9 @@ function LifeStyleAssForm({ handleChange, state }) {
             <Form.Label>Cancer</Form.Label>
             <Form.Control
               as="select"
-              name="cancerinRelation"
+              name="cancerinrelation"
               placeholder="Family Member with History"
-              onChange={handleChange}
-              cancerrelation={state}
+              onChange={handlechange}
               value={state.cancerrelation}
             >
               <option>---Select One---</option>
@@ -387,10 +288,9 @@ function LifeStyleAssForm({ handleChange, state }) {
             <Form.Label>Type Of Cancer</Form.Label>
             <Form.Control
               type="text"
-              name="typeOfCancerRelation"
+              name="typeofcancerrelation"
               placeholder="Type Of Cancer"
-              onChange={handleChange}
-              relationshipcacer={state}
+              onChange={handlechange}
               value={state.typeOfCancerRelation}
             />
           </Form.Group>
@@ -399,10 +299,9 @@ function LifeStyleAssForm({ handleChange, state }) {
             <Form.Control
               as="textarea"
               rows={3}
-              name="pastInjuriesAll"
+              name="pastinjuriesall"
               placeholder="Past Injuries"
-              onChange={handleChange}
-              pastinjuriesall={state}
+              onChange={handlechange}
               value={state.pastinjuriesall}
             />
           </Form.Group>
@@ -416,8 +315,7 @@ function LifeStyleAssForm({ handleChange, state }) {
               rows={3}
               name="lifetressors"
               placeholder="Describe any recent life stressors"
-              onChange={handleChange}
-              lifestressors={state}
+              onChange={handlechange}
               value={state.lifestressors}
             />
           </Form.Group>
@@ -428,10 +326,9 @@ function LifeStyleAssForm({ handleChange, state }) {
             <Form.Control
               as="textarea"
               rows={3}
-              name="copeWithStress"
+              name="copewithstress"
               placeholder="How do you cope with stress in your life?"
-              onChange={handleChange}
-              copewithstress={state}
+              onChange={handlechange}
               value={state.copewithstress}
             />
           </Form.Group>
@@ -442,10 +339,9 @@ function LifeStyleAssForm({ handleChange, state }) {
             <Form.Control
               as="textarea"
               rows={3}
-              name="managingCurrentStress"
+              name="managingcurrentstress"
               placeholder="How helpful are these techniques at managing your current stress level?"
-              onChange={handleChange}
-              managingcurrentstress={state}
+              onChange={handlechange}
               value={state.managingcurrentstress}
             />
           </Form.Group>
@@ -453,10 +349,9 @@ function LifeStyleAssForm({ handleChange, state }) {
             <Form.Label>Is it often hard for you to relax or unwind?</Form.Label>
             <Form.Control
               as="select"
+              onChange={handlechange}
+              name="relaxorunwind"
               value={state.relaxorunwind}
-              onChange={handleChange}
-              name="relaxOrUnwind"
-              relaxorunwind={state}
             >
               <option>---Select One---</option>
               <option value="Yes">Yes</option>
@@ -469,10 +364,9 @@ function LifeStyleAssForm({ handleChange, state }) {
             <Form.Label>How many hours do you sleep per night</Form.Label>
             <Form.Control
               as="select"
+              onChange={handlechange}
+              name="sleeppernight"
               value={state.sleeppernight}
-              onChange={handleChange}
-              name="sleepPerNight"
-              sleeppernight={state}
             >
               <option>---Select One---</option>
               <option value="1">1 Hour per night</option>
@@ -488,16 +382,18 @@ function LifeStyleAssForm({ handleChange, state }) {
               <option value="11">11 Hours per night</option>
               <option value="12">12 Hours per night</option>
             </Form.Control>
-          </Form.Group>
+          </Form.Group> 
         </div>
-        <button type="submit">Submit</button>
+        <Button type="submit" value="Register" variant="primary" onClick={handlesubmitlifeStyleassform}>
+          Submit
+        </Button>
       </Form>
     </div>
   );
 }
 
 LifeStyleAssForm.propTypes = {
-  handleChange: PropTypes.func.isRequired,
+  handlechange: PropTypes.func.isRequired,
   state: PropTypes.string.isRequired,
 };
 

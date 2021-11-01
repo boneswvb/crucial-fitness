@@ -14,6 +14,7 @@ import './Navbar.css';
 
 function NavBar() {
   const { isSignedOn } = useContext(Context);
+  const { userInfo } = useContext(Context);
   return (
     <div className="container">
       <Navbar collapseOnSelect expand="lg" variant="light">
@@ -22,7 +23,12 @@ function NavBar() {
           <Nav className="mr-auto">
             <Nav.Link eventKey={2}><Link to="/">Home</Link></Nav.Link>
             {
-              isSignedOn
+              userInfo.email === "admin@admin.com" && isSignedOn === true
+                ? <Nav.Link eventKey={47}><Link to="/AdminUserProfile">AdminUserProfile</Link></Nav.Link>
+                : null
+            }
+            {
+              userInfo.email !== "admin@admin.com" && isSignedOn === true
                 ? <Nav.Link eventKey={3}><Link to="/Userprofilepage">Profile Page</Link></Nav.Link>
                 : null
             }
@@ -41,17 +47,21 @@ function NavBar() {
               <NavDropdown.Divider />
               <NavDropdown.Item eventKey={9}><Link to="/aboutpage/waiverform">Waiver</Link></NavDropdown.Item>
             </NavDropdown>
-            <NavDropdown title="Health Info" id="collasible-nav-dropdown">
-              <NavDropdown.Item eventKey={10}><Link to="/generalhealthassessmentpage">General Health Assessment</Link></NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item eventKey={11}>
-                <Link to="/goalsetting">Goal Setting</Link>
-              </NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item eventKey={12}>
-                <Link to="/lifeStyleasspage">Life Style Assessment</Link>
-              </NavDropdown.Item>
-            </NavDropdown>
+            {
+              isSignedOn
+                ? <NavDropdown title="Health Info" id="collasible-nav-dropdown">
+                    <NavDropdown.Item eventKey={10}><Link to="/generalhealthassessmentpage">General Health Assessment</Link></NavDropdown.Item>
+                    <NavDropdown.Divider />
+                    <NavDropdown.Item eventKey={11}>
+                      <Link to="/goalsetting">Goal Setting</Link>
+                    </NavDropdown.Item>
+                    <NavDropdown.Divider />
+                    <NavDropdown.Item eventKey={12}>
+                      <Link to="/lifeStyleasspage">Life Style Assessment</Link>
+                    </NavDropdown.Item>
+                  </NavDropdown>
+              : null
+            }
             <NavDropdown title="Interesting Reads" id="collasible-nav-dropdown">
               <NavDropdown.Item eventKey={13}>
                 <Link to="/interestingreadspage/interestingreadsrorm">Interesting Reads</Link>

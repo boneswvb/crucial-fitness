@@ -1,6 +1,6 @@
 import React from 'react';
 
-function UserProfile({
+function UserNameCom({
   fullname,
   lastname,
 }) {  
@@ -11,4 +11,4 @@ function UserProfile({
   );
 }
 
-export default UserProfile;
+export default UserNameCom;

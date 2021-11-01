@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react';
 
 import { Context } from '../contextProvider/LogonContextP';
-import UserProfileCom from '../components/userProfile/UserProfileCom';
+import UserNameCom from '../components/userProfile/UserNameCom';
 
 function PatientPersonalDetailsCon() {
   const { userInfo } = useContext(Context);
@@ -52,13 +52,12 @@ function PatientPersonalDetailsCon() {
     // getGoalSettingInfo(),
     // getLifeStyleAssInfo()
   }, [userInfo])
-  console.log("allResults", allResults)
   return (
     <div>
       {
         allResults.map((items, i) => {
           return (
-            < UserProfileCom
+            < UserNameCom
               key={i}
               // id={allResults[i].p_id}
               // email={allResults[i].email}

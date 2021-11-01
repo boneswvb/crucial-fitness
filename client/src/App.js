@@ -19,6 +19,7 @@ import PhotographyPage from './pages/PhotographyPage';
 import RatesPage from './pages/RatesPage';
 import ContactUsPage from './pages/ContactUsPage';
 import UserProfilePage from './pages/UserProfilePage';
+import AdminUserProfilePage from './pages/AdminUserProfilePage';
 import Footer from './components/footer/Footer';
 
 import './App.css';
@@ -70,6 +71,9 @@ function App() {
         </Route>
         <Route path="/Userprofilepage">
           <UserProfilePage />
+        </Route>
+        <Route path="/AdminUserProfile">
+          <AdminUserProfilePage />
         </Route>
       </Switch>
       <Footer />

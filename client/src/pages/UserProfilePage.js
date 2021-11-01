@@ -2,15 +2,22 @@ import React from 'react';
 
 import PatientPersonalDetailsCon from '../containers/PatientPersonalDetailsCon';
 import PatientGeneralHealthAssessmentCon from '../containers/PatientGeneralHealthAssessmentCon';
-import PatientDetailsCon from '../containers/SubmitPatientDetailsCon';
+import SubmitPatientDetailsCon from '../containers/SubmitPatientDetailsCon';
+import PatientGoalsettingCon from '../containers/PatientGoalsettingCon';
+import PatientLifeStyleAssFormCon from '../containers/PatientLifeStyleAssFormCon';
 
 function UserProfilePage() {
   return (
-    <div >
-      <h1>User Profile</h1>
+    <div className="container">
       <PatientPersonalDetailsCon />
+      <br />
       <PatientGeneralHealthAssessmentCon />
-      <PatientDetailsCon />
+      <br />
+      <PatientGoalsettingCon />
+      <br />
+      <PatientLifeStyleAssFormCon />
+      <br />
+      <SubmitPatientDetailsCon />
     </div>
   );
 }

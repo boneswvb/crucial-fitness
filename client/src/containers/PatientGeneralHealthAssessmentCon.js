@@ -25,9 +25,13 @@ function PatientPersonalDetailsCon() {
   useEffect(() => {
     getGeneralHealthAssessmentInfo()
   }, [userInfo])
-  console.log("GeneralHealthAssessmentInfoResults", GeneralHealthAssessmentInfoResults)
   return (
     <div>
+      {
+        GeneralHealthAssessmentInfoResults.length > 0 
+        ? <h3>General Health Assessment</h3>
+        : null
+      }
       {
         GeneralHealthAssessmentInfoResults.map((items, i) => {
           return (

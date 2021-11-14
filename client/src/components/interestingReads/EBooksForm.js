@@ -1,22 +1,20 @@
-import React from 'react';
+import React from "react";
 
-import {
-  Container, Row, Col, Image,
-} from 'react-bootstrap';
+import { Container, Row, Col, Image } from "react-bootstrap";
 
-import EvanBrandStressSolutionsEBook from '../pdfBooks/EBooks/EvanBrandStressSolutionsEBook.pdf';
-import GutBrainHealingRecipesEBook from '../pdfBooks/EBooks/GutBrainHealingRecipesEBook.pdf';
-import BWellReceipyBookEBook from '../pdfBooks/EBooks/BWellReceipyBookEBook.pdf';
-import MenopauseEBook from '../pdfBooks/EBooks/MenopauseEBook.pdf';
-import TopupplementsForEnergyEnhancementEBook from '../pdfBooks/EBooks/TopupplementsForEnergyEnhancementEBook.pdf';
-import UltimateGuideToDetoxingEBook from '../pdfBooks/EBooks/UltimateGuideToDetoxingEBook.pdf';
+import EvanBrandStressSolutionsEBook from "../pdfBooks/EBooks/EvanBrandStressSolutionsEBook.pdf";
+import GutBrainHealingRecipesEBook from "../pdfBooks/EBooks/GutBrainHealingRecipesEBook.pdf";
+import BWellReceipyBookEBook from "../pdfBooks/EBooks/BWellReceipyBookEBook.pdf";
+import MenopauseEBook from "../pdfBooks/EBooks/MenopauseEBook.pdf";
+import TopupplementsForEnergyEnhancementEBook from "../pdfBooks/EBooks/TopupplementsForEnergyEnhancementEBook.pdf";
+import UltimateGuideToDetoxingEBook from "../pdfBooks/EBooks/UltimateGuideToDetoxingEBook.pdf";
 
-import EvanBrandStressSolutionsEBookWeb from '../pictures/pdf/ebooks/EvanBrandStressSolutionsEBook.jpg';
-import GutBrainHealingRecipesEBookWeb from '../pictures/pdf/ebooks/GutBrainHealingRecipesEBook.jpg';
-import EatToLiveEBookWeb from '../pictures/pdf/ebooks/EatToLiveEBook.jpg';
-import MenopauseEBookWeb from '../pictures/pdf/ebooks/MenopauseEBook.jpg';
-import TopupplementsForEnergyEnhanWeb from '../pictures/pdf/ebooks/TopupplementsForEnergyEnhan.jpg';
-import TheUltimateGuideToDetoxingWeb from '../pictures/pdf/ebooks/TheUltimateGuideToDetoxing.jpg';
+import EvanBrandStressSolutionsEBookWeb from "../pictures/pdf/ebooks/EvanBrandStressSolutionsEBook.jpg";
+import GutBrainHealingRecipesEBookWeb from "../pictures/pdf/ebooks/GutBrainHealingRecipesEBook.jpg";
+import EatToLiveEBookWeb from "../pictures/pdf/ebooks/EatToLiveEBook.jpg";
+import MenopauseEBookWeb from "../pictures/pdf/ebooks/MenopauseEBook.jpg";
+import TopupplementsForEnergyEnhanWeb from "../pictures/pdf/ebooks/TopupplementsForEnergyEnhan.jpg";
+import TheUltimateGuideToDetoxingWeb from "../pictures/pdf/ebooks/TheUltimateGuideToDetoxing.jpg";
 
 function EBooksForm() {
   return (

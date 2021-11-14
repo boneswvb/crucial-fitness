@@ -1,11 +1,9 @@
-import React from 'react';
+import React from "react";
 
-import {
-  Container, Row, Col, Image,
-} from 'react-bootstrap';
+import { Container, Row, Col, Image } from "react-bootstrap";
 
-import MealPrepping7DayHealthyFoodMealPlan from '../pdfBooks/Meal Prepping/MealPrepping7DayHealthyFoodMealPlan.pdf';
-import MealPrepping7DayHealthyFoodWeb from '../pictures/pdf/mealPrep/MealPrepping7DayHealthyFood.jpg';
+import MealPrepping7DayHealthyFoodMealPlan from "../pdfBooks/Meal Prepping/MealPrepping7DayHealthyFoodMealPlan.pdf";
+import MealPrepping7DayHealthyFoodWeb from "../pictures/pdf/mealPrep/MealPrepping7DayHealthyFood.jpg";
 
 function MealPrepForm() {
   return (

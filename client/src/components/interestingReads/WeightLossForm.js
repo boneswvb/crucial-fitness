@@ -1,18 +1,16 @@
-import React from 'react';
+import React from "react";
 
-import {
-  Container, Row, Col, Image,
-} from 'react-bootstrap';
+import { Container, Row, Col, Image } from "react-bootstrap";
 
-import fiveDayFatLossAcceleratorv3WieghtLoss from '../pdfBooks/WeightLoss/5DayFatLossAcceleratorv3WieghtLoss.pdf';
-import BalancingBenefitsOfThisTwoIngredientMorningTonicWieghtLoss from '../pdfBooks/WeightLoss/19BalancingBenefitsOfThisTwoIngredientMorningTonicWieghtLoss.pdf';
-import TheRedTeaDetoxFreeWieghtLoss from '../pdfBooks/WeightLoss/TheRedTeaDetoxFreeWieghtLoss.pdf';
-import TheUltimateGuideToDetoxingWieghtLoss from '../pdfBooks/WeightLoss/TheUltimateGuideToDetoxingWieghtLoss.pdf';
+import fiveDayFatLossAcceleratorv3WieghtLoss from "../pdfBooks/WeightLoss/5DayFatLossAcceleratorv3WieghtLoss.pdf";
+import BalancingBenefitsOfThisTwoIngredientMorningTonicWieghtLoss from "../pdfBooks/WeightLoss/19BalancingBenefitsOfThisTwoIngredientMorningTonicWieghtLoss.pdf";
+import TheRedTeaDetoxFreeWieghtLoss from "../pdfBooks/WeightLoss/TheRedTeaDetoxFreeWieghtLoss.pdf";
+import TheUltimateGuideToDetoxingWieghtLoss from "../pdfBooks/WeightLoss/TheUltimateGuideToDetoxingWieghtLoss.pdf";
 
-import FiveDayFattLossAcceleratorWeb from '../pictures/pdf/weightLoss/FiveDayFattLossAccelerator.jpg';
-import NineteenBalancingBenefitsOfWeb from '../pictures/pdf/weightLoss/NineteenBalancingBenefitsOf.jpg';
-import TheRedTeaDetoxWeb from '../pictures/pdf/weightLoss/TheRedTeaDetox.jpg';
-import TheUltimateGuideToDetoxingWeb from '../pictures/pdf/weightLoss/TheUltimateGuideToDetoxing.jpg';
+import FiveDayFattLossAcceleratorWeb from "../pictures/pdf/weightLoss/FiveDayFattLossAccelerator.jpg";
+import NineteenBalancingBenefitsOfWeb from "../pictures/pdf/weightLoss/NineteenBalancingBenefitsOf.jpg";
+import TheRedTeaDetoxWeb from "../pictures/pdf/weightLoss/TheRedTeaDetox.jpg";
+import TheUltimateGuideToDetoxingWeb from "../pictures/pdf/weightLoss/TheUltimateGuideToDetoxing.jpg";
 
 function WeightLossForm() {
   return (
@@ -35,7 +33,9 @@ function WeightLossForm() {
           </Col>
           <Col xs={12} md={3}>
             <h3>19 Balancing Benefits Of This Two Ingredient Morning Tonic</h3>
-            <a href={BalancingBenefitsOfThisTwoIngredientMorningTonicWieghtLoss}>
+            <a
+              href={BalancingBenefitsOfThisTwoIngredientMorningTonicWieghtLoss}
+            >
               <Image
                 // width={150}
                 // height={200}

@@ -1,10 +1,10 @@
-import React from 'react';
+import React from "react";
 
-import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
-import Modal from 'react-bootstrap/Modal';
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
+import Modal from "react-bootstrap/Modal";
 
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 function PatientDetails({
   handlechange,
@@ -12,31 +12,33 @@ function PatientDetails({
   handlesubmitpatdetails,
   handleclose,
   handleshow,
-  show
+  show,
 }) {
   return (
     <div>
-      <Form 
-      id="gform"
-      method="POST"
-      class="pure-form pure-form-stacked"
-      data-email="from_email@example.com"
-      action="https://script.google.com/macros/s/AKfycbw-DZp1Q1Ad8tQCn5N3B4RJlYqGArQH5_pVGrH3wHLnne6gojVf0gV5c3s9fG2mVqTizw/exec"
+      <Form
+        id="gform"
+        method="POST"
+        class="pure-form pure-form-stacked"
+        data-email="from_email@example.com"
+        action="https://script.google.com/macros/s/AKfycbw-DZp1Q1Ad8tQCn5N3B4RJlYqGArQH5_pVGrH3wHLnne6gojVf0gV5c3s9fG2mVqTizw/exec"
       >
-      <Button variant="secondary" onClick={handleshow}>Submit Personal Details</Button>
-      <br />
-      <Modal show={show} onHide={handleclose}>
-        <Modal.Header closeButton>
-          <Modal.Title>Personal Details</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <Form
-          id="gform"
-          method="POST"
-          class="pure-form pure-form-stacked"
-          data-email="from_email@example.com"
-          action="https://script.google.com/macros/s/AKfycbw-DZp1Q1Ad8tQCn5N3B4RJlYqGArQH5_pVGrH3wHLnne6gojVf0gV5c3s9fG2mVqTizw/exec"
-          >
+        <Button variant="secondary" onClick={handleshow}>
+          Submit Personal Details
+        </Button>
+        <br />
+        <Modal show={show} onHide={handleclose}>
+          <Modal.Header closeButton>
+            <Modal.Title>Personal Details</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <Form
+              id="gform"
+              method="POST"
+              class="pure-form pure-form-stacked"
+              data-email="from_email@example.com"
+              action="https://script.google.com/macros/s/AKfycbw-DZp1Q1Ad8tQCn5N3B4RJlYqGArQH5_pVGrH3wHLnne6gojVf0gV5c3s9fG2mVqTizw/exec"
+            >
               <h3>Personal Details</h3>
               <Form.Group size="lg" controlId="email">
                 <Form.Label>Email</Form.Label>
@@ -143,7 +145,12 @@ function PatientDetails({
             <Button variant="secondary" onClick={handleclose}>
               Close
             </Button>
-            <Button type="submit" value="Submit" variant="primary" onClick={handlesubmitpatdetails}>
+            <Button
+              type="submit"
+              value="Submit"
+              variant="primary"
+              onClick={handlesubmitpatdetails}
+            >
               Submit
             </Button>
           </Modal.Footer>

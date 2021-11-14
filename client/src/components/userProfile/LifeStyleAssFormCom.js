@@ -1,6 +1,8 @@
-import React from 'react';
+import React from "react";
 
-import Table from 'react-bootstrap/Table'
+import Table from "react-bootstrap/Table";
+
+import PropTypes from "prop-types";
 
 function LifeStyleAssFormCom({
   email,
@@ -13,8 +15,8 @@ function LifeStyleAssFormCom({
   managingcurrentstress,
   relaxorunwind,
   sleeppernight,
-  date
-}) {  
+  date,
+}) {
   return (
     <div>
       <Table striped bordered hover>
@@ -30,14 +32,14 @@ function LifeStyleAssFormCom({
         </thead>
         <tbody>
           <tr>
-          <td>{email}</td>
-          <td>{curhealtproblems}</td>
-          <td>{medicalhistory}</td>
-          <td>{medsandsuppliments}</td>
-          <td>{pastinjuriesall}</td>
-          <td>{date}</td>
+            <td>{email}</td>
+            <td>{curhealtproblems}</td>
+            <td>{medicalhistory}</td>
+            <td>{medsandsuppliments}</td>
+            <td>{pastinjuriesall}</td>
+            <td>{date}</td>
           </tr>
-        </tbody>        
+        </tbody>
         <thead>
           <tr>
             <th>Life Stressors</th>
@@ -50,17 +52,31 @@ function LifeStyleAssFormCom({
         </thead>
         <tbody>
           <tr>
-          <td>{lifetressors}</td>
-          <td>{copewithstress}</td>
-          <td>{managingcurrentstress}</td>
-          <td>{relaxorunwind}</td>
-          <td>{sleeppernight}</td>
-          <td>{date}</td>
+            <td>{lifetressors}</td>
+            <td>{copewithstress}</td>
+            <td>{managingcurrentstress}</td>
+            <td>{relaxorunwind}</td>
+            <td>{sleeppernight}</td>
+            <td>{date}</td>
           </tr>
-        </tbody>        
-      </Table>      
+        </tbody>
+      </Table>
     </div>
   );
 }
+
+LifeStyleAssFormCom.propTypes = {
+  email: PropTypes.string.isRequired,
+  curhealtproblems: PropTypes.string.isRequired,
+  medicalhistory: PropTypes.string.isRequired,
+  medsandsuppliments: PropTypes.string.isRequired,
+  pastinjuriesall: PropTypes.string.isRequired,
+  lifetressors: PropTypes.string.isRequired,
+  copewithstress: PropTypes.string.isRequired,
+  managingcurrentstress: PropTypes.string.isRequired,
+  relaxorunwind: PropTypes.string.isRequired,
+  sleeppernight: PropTypes.string.isRequired,
+  date: PropTypes.string.isRequired,
+};
 
 export default LifeStyleAssFormCom;

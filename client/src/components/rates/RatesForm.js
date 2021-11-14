@@ -1,12 +1,12 @@
-import React from 'react';
+import React from "react";
 
-import RateCoachingGeneralFitnessForm from './RateCoachingGeneralFitnessForm';
-import RateCoachingGroupForm from './RateCoachingGroupForm';
-import RateCoachingIndividuelForm from './RateCoachingIndividuelForm';
-import RateCoachingSportSpecificForm from './RateCoachingSportSpecificForm';
-import RatePhotographyForm from './RatePhotographyForm';
-import RateRehabilitationForm from './RateRehabilitationForm';
-import RateWeightLossForm from './RateWeightLossForm';
+import RateCoachingGeneralFitnessForm from "./RateCoachingGeneralFitnessForm";
+import RateCoachingGroupForm from "./RateCoachingGroupForm";
+import RateCoachingIndividuelForm from "./RateCoachingIndividuelForm";
+import RateCoachingSportSpecificForm from "./RateCoachingSportSpecificForm";
+import RatePhotographyForm from "./RatePhotographyForm";
+import RateRehabilitationForm from "./RateRehabilitationForm";
+import RateWeightLossForm from "./RateWeightLossForm";
 
 function RatesForm() {
   return (

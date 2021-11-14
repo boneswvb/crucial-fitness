@@ -1,13 +1,13 @@
-import React, { useContext } from 'react';
+import React, { useContext } from "react";
 
-import { Link } from 'react-router-dom';
-import Nav from 'react-bootstrap/Nav';
+import { Link } from "react-router-dom";
+import Nav from "react-bootstrap/Nav";
 
-import Button from 'react-bootstrap/Button';
-import Modal from 'react-bootstrap/Modal';
-import Form from 'react-bootstrap/Form';
+import Button from "react-bootstrap/Button";
+import Modal from "react-bootstrap/Modal";
+import Form from "react-bootstrap/Form";
 
-import { Context } from '../../contextProvider/LogonContextP';
+import { Context } from "../../contextProvider/LogonContextP";
 
 function Logon() {
   const {
@@ -22,11 +22,19 @@ function Logon() {
   } = useContext(Context);
   return (
     <div>
-      {
-        !isSignedOn
-          ? <Button variant="secondary" onClick={handleShow}>Logon</Button>
-          : < Nav.Link eventKey={2}><Link to="/"><Button variant="secondary" onClick={handleClickLogOff}>Log off</Button></Link></Nav.Link>
-      }
+      {!isSignedOn ? (
+        <Button variant="secondary" onClick={handleShow}>
+          Logon
+        </Button>
+      ) : (
+        <Nav.Link eventKey={2}>
+          <Link to="/">
+            <Button variant="secondary" onClick={handleClickLogOff}>
+              Log off
+            </Button>
+          </Link>
+        </Nav.Link>
+      )}
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
@@ -61,10 +69,10 @@ function Logon() {
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-          <Button 
-            type="submit" 
-            value="Register" 
-            variant="primary" 
+          <Button
+            type="submit"
+            value="Register"
+            variant="primary"
             onClick={handleClose}
             onClick={(e) => getUserInfo(e)}
           >
@@ -72,7 +80,7 @@ function Logon() {
           </Button>
         </Modal.Footer>
       </Modal>
-    </div >
+    </div>
   );
 }
 

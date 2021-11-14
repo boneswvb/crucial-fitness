@@ -1,18 +1,14 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext } from "react";
 
-import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
-import Modal from 'react-bootstrap/Modal';
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
+import Modal from "react-bootstrap/Modal";
 
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
-import { Context } from '../../contextProvider/LogonContextP';
+import { Context } from "../../contextProvider/LogonContextP";
 
-function Register({
-  handlesubmit,
-  onchange,
-  state,
-}) {
+function Register({ handlesubmit, onchange, state }) {
   const [show, setShow] = useState(false);
   const { isSignedOn } = useContext(Context);
 
@@ -20,11 +16,11 @@ function Register({
   const handleShow = () => setShow(true);
   return (
     <div>
-      {
-        !isSignedOn
-          ? <Button variant="secondary" onClick={handleShow}>Register</Button>
-          : null
-      }
+      {!isSignedOn ? (
+        <Button variant="secondary" onClick={handleShow}>
+          Register
+        </Button>
+      ) : null}
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Register</Modal.Title>
@@ -65,7 +61,12 @@ function Register({
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-          <Button type="submit" value="Register" variant="primary" onClick={handlesubmit}>
+          <Button
+            type="submit"
+            value="Register"
+            variant="primary"
+            onClick={handlesubmit}
+          >
             Register
           </Button>
         </Modal.Footer>

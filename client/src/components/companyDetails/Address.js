@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 
-import Media from 'react-bootstrap/Media';
+import Media from "react-bootstrap/Media";
 
 function Address() {
   return (
@@ -14,12 +14,12 @@ function Address() {
           White River / Witrevier, 1240
           <br />
           <strong>Cel:</strong>
-            &nbsp; 076 799 0733
+          &nbsp; 076 799 0733
           <br />
           <strong>Email:</strong>
-            &nbsp; info@crucialfitness.com
-            <strong>Email:</strong>
-            &nbsp; admin@crucialfitness.com
+          &nbsp; info@crucialfitness.com
+          <strong>Email:</strong>
+          &nbsp; admin@crucialfitness.com
         </p>
       </Media.Body>
     </div>

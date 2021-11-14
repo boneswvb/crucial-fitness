@@ -1,10 +1,10 @@
-import React from 'react';
+import React from "react";
 
-import Figure from 'react-bootstrap/Figure';
+import Figure from "react-bootstrap/Figure";
 
-import IMG1 from '../pictures/Healthy Bites/1402472465186.jpg';
-import IMG2 from '../pictures/Healthy Bites/1405422003941.jpg';
-import IMG3 from '../pictures/Healthy Bites/FB_IMG_1430393108986.jpg';
+import IMG1 from "../pictures/Healthy Bites/1402472465186.jpg";
+import IMG2 from "../pictures/Healthy Bites/1405422003941.jpg";
+import IMG3 from "../pictures/Healthy Bites/FB_IMG_1430393108986.jpg";
 
 function HealtyBitesForm() {
   return (

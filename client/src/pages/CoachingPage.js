@@ -1,24 +1,21 @@
-import React from 'react';
+import React from "react";
 
-import { Switch, Route } from 'react-router-dom';
-import { Helmet } from 'react-helmet';
+import { Switch, Route } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
-import CoachingForm from '../components/coaching/CoachingForm';
-import GeneralFitnessForm from '../components/coaching/GeneralFitnessForm';
-import GroupForm from '../components/coaching/GroupForm';
-import HockeyForm from '../components/coaching/HockeyForm';
-import IndividuelForm from '../components/coaching/IndividuelForm';
-import NetballForm from '../components/coaching/NetballForm';
-import RugbyForm from '../components/coaching/RugbyForm';
+import CoachingForm from "../components/coaching/CoachingForm";
+import GeneralFitnessForm from "../components/coaching/GeneralFitnessForm";
+import GroupForm from "../components/coaching/GroupForm";
+import HockeyForm from "../components/coaching/HockeyForm";
+import IndividuelForm from "../components/coaching/IndividuelForm";
+import NetballForm from "../components/coaching/NetballForm";
+import RugbyForm from "../components/coaching/RugbyForm";
 
 function CoachingPage() {
   return (
-    <div className="container" style={{ textAlign: 'center' }}>
+    <div className="container" style={{ textAlign: "center" }}>
       <Helmet>
-        <meta
-          name="keywords"
-          content="service "
-        />
+        <meta name="keywords" content="service " />
         <meta name="description" content="aaa" />
         <title>Coaching - Crucial Fitness & Nutrition</title>
       </Helmet>

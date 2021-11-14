@@ -1,25 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
-import Register from '../components/logonRegister/RegisterModal';
+import Register from "../components/logonRegister/RegisterModal";
 
 export default function Login() {
-  const [formState, setFormState] = useState('');
+  const [formState, setFormState] = useState("");
 
   const handleChange = (e) => {
-    const {
-      name,
-      value,
-      type,
-      checked,
-    } = e.target;
-    return type === 'checkbox' ? setFormState({
-      ...formState,
-      [name]: checked,
-    })
+    const { name, value, type, checked } = e.target;
+    return type === "checkbox"
+      ? setFormState({
+          ...formState,
+          [name]: checked,
+        })
       : setFormState({
-        ...formState,
-        [name]: value,
-      });
+          ...formState,
+          [name]: value,
+        });
   };
 
   const { password, email, lastname } = formState;
@@ -28,12 +24,12 @@ export default function Login() {
     e.preventDefault();
     try {
       const body = { password, email, lastname };
-      await fetch('http://localhost:5000/api/Register', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+      await fetch("http://localhost:5000/api/Register", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body),
       });
-      window.location = '/';
+      window.location = "/";
     } catch (err) {
       console.error(err.message);
     }

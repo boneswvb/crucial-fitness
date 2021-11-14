@@ -1,8 +1,8 @@
-import React from 'react';
+import React from "react";
 
-import BlogsForm from './BlogsForm';
-import EBooksForm from './EBooksForm';
-import WeightLossForm from './WeightLossForm';
+import BlogsForm from "./BlogsForm";
+import EBooksForm from "./EBooksForm";
+import WeightLossForm from "./WeightLossForm";
 
 function InterestingReadsForm() {
   return (

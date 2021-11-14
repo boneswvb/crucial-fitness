@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 
-import Figure from 'react-bootstrap/Figure';
+import Figure from "react-bootstrap/Figure";
 
 function RugbyForm() {
   return (

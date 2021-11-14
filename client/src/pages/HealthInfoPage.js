@@ -1,19 +1,16 @@
-import React from 'react';
+import React from "react";
 
-import { Helmet } from 'react-helmet';
+import { Helmet } from "react-helmet";
 
-import GeneralHealthAssessmentPage from './GeneralHealthAssessmentPage';
-import GoalSetting from '../components/forms/GoalSettingForm';
-import LifeStyleAssPage from './LifeStyleAssPage';
+import GeneralHealthAssessmentPage from "./GeneralHealthAssessmentPage";
+import GoalSetting from "../components/forms/GoalSettingForm";
+import LifeStyleAssPage from "./LifeStyleAssPage";
 
 function HealthInfoPage() {
   return (
     <div className="container">
       <Helmet>
-        <meta
-          name="keywords"
-          content="service "
-        />
+        <meta name="keywords" content="service " />
         <meta name="description" content="aaa" />
         <title>Health Information - Crucial Fitness & Nutrition</title>
       </Helmet>

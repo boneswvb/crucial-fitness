@@ -1,22 +1,19 @@
-import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import React from "react";
+import { Switch, Route } from "react-router-dom";
 
-import { Helmet } from 'react-helmet';
+import { Helmet } from "react-helmet";
 
-import AllRecipes from '../components/recipes/AllRecipes';
-import HealtyBitesForm from '../components/recipes/HealtyBitesForm';
-import MealPrepForm from '../components/recipes/MealPrepForm';
-import QuickMealsForm from '../components/recipes/QuickMealsForm';
-import SmoothiesForm from '../components/recipes/SmoothiesForm';
+import AllRecipes from "../components/recipes/AllRecipes";
+import HealtyBitesForm from "../components/recipes/HealtyBitesForm";
+import MealPrepForm from "../components/recipes/MealPrepForm";
+import QuickMealsForm from "../components/recipes/QuickMealsForm";
+import SmoothiesForm from "../components/recipes/SmoothiesForm";
 
 function RecipesPage() {
   return (
     <div className="container">
       <Helmet>
-        <meta
-          name="keywords"
-          content="service "
-        />
+        <meta name="keywords" content="service " />
         <meta name="description" content="aaa" />
         <title>Recipes - Crucial Fitness & Nutrition</title>
       </Helmet>

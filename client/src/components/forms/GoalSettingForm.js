@@ -1,20 +1,20 @@
-import React from 'react';
+import React from "react";
 
-import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
 
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
-function GoalSettingForm({ handlechange, state, handlesubmitgoalsettingform }) { 
+function GoalSettingForm({ handlechange, state, handlesubmitgoalsettingform }) {
   return (
     <div className="container">
       <h1>Goal Setting Form</h1>
       <Form
-      id="gform"
-      method="POST"
-      class="pure-form pure-form-stacked"
-      data-email="from_email@example.com"
-      action="https://script.google.com/macros/s/AKfycbw-DZp1Q1Ad8tQCn5N3B4RJlYqGArQH5_pVGrH3wHLnne6gojVf0gV5c3s9fG2mVqTizw/exec"
+        id="gform"
+        method="POST"
+        class="pure-form pure-form-stacked"
+        data-email="from_email@example.com"
+        action="https://script.google.com/macros/s/AKfycbw-DZp1Q1Ad8tQCn5N3B4RJlYqGArQH5_pVGrH3wHLnne6gojVf0gV5c3s9fG2mVqTizw/exec"
       >
         <h3>Personal Details</h3>
         <Form.Group size="lg" controlId="email">
@@ -57,7 +57,12 @@ function GoalSettingForm({ handlechange, state, handlesubmitgoalsettingform }) {
             value={state.hardesttochange}
           />
         </Form.Group>
-        <Button type="submit" value="Register" variant="primary" onClick={handlesubmitgoalsettingform}>
+        <Button
+          type="submit"
+          value="Register"
+          variant="primary"
+          onClick={handlesubmitgoalsettingform}
+        >
           Submit
         </Button>
       </Form>
@@ -67,6 +72,7 @@ function GoalSettingForm({ handlechange, state, handlesubmitgoalsettingform }) {
 
 GoalSettingForm.propTypes = {
   handlechange: PropTypes.func.isRequired,
+  handlesubmitgoalsettingform: PropTypes.func.isRequired,
   state: PropTypes.string.isRequired,
 };
 

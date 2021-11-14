@@ -1,10 +1,10 @@
-import React from 'react';
+import React from "react";
 
-import PhotoAthleticsForm from './PhotoAthleticsForm';
-import PhotoHockeyForm from './PhotoHockeyForm';
-import PhotoNetballForm from './PhotoNetballForm';
-import PhotoRugbyForm from './PhotoRugbyForm';
-import PhotoTennisForm from './PhotoTennisForm';
+import PhotoAthleticsForm from "./PhotoAthleticsForm";
+import PhotoHockeyForm from "./PhotoHockeyForm";
+import PhotoNetballForm from "./PhotoNetballForm";
+import PhotoRugbyForm from "./PhotoRugbyForm";
+import PhotoTennisForm from "./PhotoTennisForm";
 
 function PhotographyForm() {
   return (

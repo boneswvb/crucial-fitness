@@ -1,20 +1,23 @@
-import React from 'react';
+import React from "react";
 
-import { Switch, Route } from 'react-router-dom';
-import { Helmet } from 'react-helmet';
+import { Switch, Route } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
-import AboutForm from '../components/about/AboutForm';
-import BiographyForm from '../components/about/BiographyForm';
-import MissionVisionForm from '../components/about/MissionVisionForm';
-import RuleAndRegulationsForm from '../components/about/RuleAndRegulationsForm';
-import AcceptanceForm from '../components/about/AcceptanceForm';
-import WaiverForm from '../components/about/WaiverForm';
+import AboutForm from "../components/about/AboutForm";
+import BiographyForm from "../components/about/BiographyForm";
+import MissionVisionForm from "../components/about/MissionVisionForm";
+import RuleAndRegulationsForm from "../components/about/RuleAndRegulationsForm";
+import AcceptanceForm from "../components/about/AcceptanceForm";
+import WaiverForm from "../components/about/WaiverForm";
 
 function AboutPage() {
   return (
-    <div className="container" style={{ textAlign: 'center' }}>
+    <div className="container" style={{ textAlign: "center" }}>
       <Helmet>
-        <meta name="keywords" content="Crucial Fitness - Coaching & Rehabilitation" />
+        <meta
+          name="keywords"
+          content="Crucial Fitness - Coaching & Rehabilitation"
+        />
         <meta
           name="description"
           content="Crucial Fitness Coaching And Rehabilitation Biography

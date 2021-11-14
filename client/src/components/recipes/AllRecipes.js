@@ -1,9 +1,9 @@
-import React from 'react';
+import React from "react";
 
-import HealtyBitesForm from './HealtyBitesForm';
-import MealPrepForm from './MealPrepForm';
+import HealtyBitesForm from "./HealtyBitesForm";
+import MealPrepForm from "./MealPrepForm";
 // import QuickMealsForm from './QuickMealsForm';
-import SmoothiesForm from './SmoothiesForm';
+import SmoothiesForm from "./SmoothiesForm";
 
 function AllRecipes() {
   return (
@@ -13,7 +13,6 @@ function AllRecipes() {
       {/* <QuickMealsForm /> */}
       <SmoothiesForm />
     </div>
-
   );
 }
 

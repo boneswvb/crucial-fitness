@@ -1,9 +1,11 @@
 import React from "react";
 
-function AdminUserProfile () {
+function AdminUserProfile() {
   return (
     <div className="container">
       <h1>AdminUserProfile</h1>
     </div>
-  )
+  );
 }
+
+export default AdminUserProfile;

@@ -1,18 +1,15 @@
-import React from 'react';
+import React from "react";
 
-import { Switch, Route } from 'react-router-dom';
-import { Helmet } from 'react-helmet';
+import { Switch, Route } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
-import ContactUsForm from '../components/contactUs/ContactUsForm';
+import ContactUsForm from "../components/contactUs/ContactUsForm";
 
 function ContactUsPage() {
   return (
     <div className="container">
       <Helmet>
-        <meta
-          name="keywords"
-          content="service "
-        />
+        <meta name="keywords" content="service " />
         <meta name="description" content="aaa" />
         <title>Contact Us - Crucial Fitness & Nutrition</title>
       </Helmet>

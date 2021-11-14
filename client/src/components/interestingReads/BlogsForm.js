@@ -1,20 +1,18 @@
-import React from 'react';
+import React from "react";
 
-import {
-  Container, Row, Col, Image,
-} from 'react-bootstrap';
+import { Container, Row, Col, Image } from "react-bootstrap";
 
-import './interestingReads.css';
+import "./interestingReads.css";
 
-import InterestingReadDiabesityRP from '../pdfBooks/Blogs/InterestingReadDiabesityRP.pdf';
-import InterestingReadDiabetesBook from '../pdfBooks/Blogs/InterestingReadDiabetesBook.pdf';
-import InterestingReadEatWell from '../pdfBooks/Blogs/InterestingReadEatWell.pdf';
-import InterestingReadTricksAndTipsForDrinkingMoreWater from '../pdfBooks/Blogs/InterestingReadTricksAndTipsForDrinkingMoreWater..pdf';
+import InterestingReadDiabesityRP from "../pdfBooks/Blogs/InterestingReadDiabesityRP.pdf";
+import InterestingReadDiabetesBook from "../pdfBooks/Blogs/InterestingReadDiabetesBook.pdf";
+import InterestingReadEatWell from "../pdfBooks/Blogs/InterestingReadEatWell.pdf";
+import InterestingReadTricksAndTipsForDrinkingMoreWater from "../pdfBooks/Blogs/InterestingReadTricksAndTipsForDrinkingMoreWater..pdf";
 
-import InterestingReadDiabesityRPWeb from '../pictures/pdf/blogs/InterestingReadDiabesityRPWeb.jpg';
-import InterestingReadDiabetesBookWeb from '../pictures/pdf/blogs/InterestingReadDiabetesBook.jpg';
-import InterestingReadEatWellWeb from '../pictures/pdf/blogs/InterestingReadEatWell.jpg';
-import InterestingReadWaterGlassWeb from '../pictures/pdf/blogs/InterestingReadWaterGlass.jpg';
+import InterestingReadDiabesityRPWeb from "../pictures/pdf/blogs/InterestingReadDiabesityRPWeb.jpg";
+import InterestingReadDiabetesBookWeb from "../pictures/pdf/blogs/InterestingReadDiabetesBook.jpg";
+import InterestingReadEatWellWeb from "../pictures/pdf/blogs/InterestingReadEatWell.jpg";
+import InterestingReadWaterGlassWeb from "../pictures/pdf/blogs/InterestingReadWaterGlass.jpg";
 
 function BlogsForm() {
   return (

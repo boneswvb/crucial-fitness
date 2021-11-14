@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 function RateCoachingIndividuelForm() {
   return (
@@ -56,8 +56,7 @@ function RateCoachingIndividuelForm() {
           <tr>
             <th scope="row">6</th>
             <td>
-              Massage
-              Back, Neck
+              Massage Back, Neck
               <br />
               & Shoulders
               <br />
@@ -75,10 +74,8 @@ function RateCoachingIndividuelForm() {
           <tr>
             <th scope="row">8</th>
             <td>
-              Massage
-              Feet, Back, Neck
-              <br />
-              & Legs
+              Massage Feet, Back, Neck
+              <br />& Legs
             </td>
             <td>45 Minutes</td>
             <td>450</td>

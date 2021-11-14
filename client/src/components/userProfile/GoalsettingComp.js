@@ -1,14 +1,16 @@
-import React from 'react';
+import React from "react";
 
-import Table from 'react-bootstrap/Table'
+import Table from "react-bootstrap/Table";
+
+import PropTypes from "prop-types";
 
 function GoalsettingComp({
-  email, 
-  lifstylechanges, 
-  easiesttochange, 
-  hardesttochange, 
-  date
-}) {  
+  email,
+  lifstylechanges,
+  easiesttochange,
+  hardesttochange,
+  date,
+}) {
   return (
     <div>
       <Table striped bordered hover>
@@ -16,7 +18,7 @@ function GoalsettingComp({
           <tr>
             <th>Email</th>
             <th>Life Style Changes</th>
-            <th>Easiest To  Change</th>
+            <th>Easiest To Change</th>
             <th>Hardest To Change</th>
             <th>Date Submitted</th>
           </tr>
@@ -34,5 +36,13 @@ function GoalsettingComp({
     </div>
   );
 }
+
+GoalsettingComp.propTypes = {
+  email: PropTypes.string.isRequired,
+  lifstylechanges: PropTypes.string.isRequired,
+  easiesttochange: PropTypes.string.isRequired,
+  hardesttochange: PropTypes.string.isRequired,
+  date: PropTypes.string.isRequired,
+};
 
 export default GoalsettingComp;

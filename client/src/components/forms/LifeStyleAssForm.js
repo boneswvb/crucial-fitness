@@ -1,23 +1,27 @@
-import React from 'react';
+import React from "react";
 
-import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
 
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
-function LifeStyleAssForm({ handlechange, state, handlesubmitlifeStyleassform }) {
-  console.log('state', state)
+function LifeStyleAssForm({
+  handlechange,
+  state,
+  handlesubmitlifeStyleassform,
+}) {
+  console.log("state", state);
   return (
     <div className="container">
       <h1>Life Style Assessment</h1>
-      <Form 
-      id="gform"
-      method="POST"
-      class="pure-form pure-form-stacked"
-      data-email="from_email@example.com"
-      action="https://script.google.com/macros/s/AKfycbw-DZp1Q1Ad8tQCn5N3B4RJlYqGArQH5_pVGrH3wHLnne6gojVf0gV5c3s9fG2mVqTizw/exec"
+      <Form
+        id="gform"
+        method="POST"
+        class="pure-form pure-form-stacked"
+        data-email="from_email@example.com"
+        action="https://script.google.com/macros/s/AKfycbw-DZp1Q1Ad8tQCn5N3B4RJlYqGArQH5_pVGrH3wHLnne6gojVf0gV5c3s9fG2mVqTizw/exec"
       >
-      <Form.Group size="lg" controlId="email">
+        <Form.Group size="lg" controlId="email">
           <Form.Label>Email</Form.Label>
           <Form.Control
             autoFocus
@@ -39,7 +43,9 @@ function LifeStyleAssForm({ handlechange, state, handlesubmitlifeStyleassform })
           />
         </Form.Group>
         <Form.Group controlId="medicalhistory">
-          <Form.Label>Medical History - For The Last 10 Years And Other Important</Form.Label>
+          <Form.Label>
+            Medical History - For The Last 10 Years And Other Important
+          </Form.Label>
           <Form.Control
             as="textarea"
             rows={3}
@@ -50,7 +56,9 @@ function LifeStyleAssForm({ handlechange, state, handlesubmitlifeStyleassform })
           />
         </Form.Group>
         <Form.Group controlId="medsandsuppliments">
-          <Form.Label>Current Medication And Suppliments That You Are Using</Form.Label>
+          <Form.Label>
+            Current Medication And Suppliments That You Are Using
+          </Form.Label>
           <Form.Control
             as="textarea"
             rows={3}
@@ -61,7 +69,10 @@ function LifeStyleAssForm({ handlechange, state, handlesubmitlifeStyleassform })
           />
         </Form.Group>
         <div>
-          <h3>Family History – Does anyone in your family have a history of the following?</h3>
+          <h3>
+            Family History – Does anyone in your family have a history of the
+            following?
+          </h3>
           <Form.Group controlId="heartDiseaseRelation">
             <Form.Label>Heart Disease</Form.Label>
             <Form.Control
@@ -258,7 +269,6 @@ function LifeStyleAssForm({ handlechange, state, handlesubmitlifeStyleassform })
               <option>Grand Father</option>
               <option>Uncle</option>
               <option>Aunt</option>
-
             </Form.Control>
           </Form.Group>
           <Form.Group controlId="cancerRelation">
@@ -282,7 +292,6 @@ function LifeStyleAssForm({ handlechange, state, handlesubmitlifeStyleassform })
               <option>Uncle</option>
               <option>Aunt</option>
             </Form.Control>
-
           </Form.Group>
           <Form.Group controlId="typeOfCancerRelation">
             <Form.Label>Type Of Cancer</Form.Label>
@@ -308,7 +317,8 @@ function LifeStyleAssForm({ handlechange, state, handlesubmitlifeStyleassform })
           <h2>Stress Management</h2>
           <Form.Group controlId="lifeStressors">
             <Form.Label>
-              Describe any recent life stressors? (e.g. Health, Relationship/s, Financial, Work)
+              Describe any recent life stressors? (e.g. Health, Relationship/s,
+              Financial, Work)
             </Form.Label>
             <Form.Control
               as="textarea"
@@ -321,7 +331,8 @@ function LifeStyleAssForm({ handlechange, state, handlesubmitlifeStyleassform })
           </Form.Group>
           <Form.Group controlId="copeWithStress">
             <Form.Label>
-              How do you cope with stress in your life? (e.g. Physical Activity, Medication)
+              How do you cope with stress in your life? (e.g. Physical Activity,
+              Medication)
             </Form.Label>
             <Form.Control
               as="textarea"
@@ -334,7 +345,8 @@ function LifeStyleAssForm({ handlechange, state, handlesubmitlifeStyleassform })
           </Form.Group>
           <Form.Group controlId="managingCurrentStress">
             <Form.Label>
-              How helpful are these techniques at managing your current stress level?
+              How helpful are these techniques at managing your current stress
+              level?
             </Form.Label>
             <Form.Control
               as="textarea"
@@ -346,7 +358,9 @@ function LifeStyleAssForm({ handlechange, state, handlesubmitlifeStyleassform })
             />
           </Form.Group>
           <Form.Group controlId="relaxOrUnwind">
-            <Form.Label>Is it often hard for you to relax or unwind?</Form.Label>
+            <Form.Label>
+              Is it often hard for you to relax or unwind?
+            </Form.Label>
             <Form.Control
               as="select"
               onChange={handlechange}
@@ -382,9 +396,14 @@ function LifeStyleAssForm({ handlechange, state, handlesubmitlifeStyleassform })
               <option value="11">11 Hours per night</option>
               <option value="12">12 Hours per night</option>
             </Form.Control>
-          </Form.Group> 
+          </Form.Group>
         </div>
-        <Button type="submit" value="Register" variant="primary" onClick={handlesubmitlifeStyleassform}>
+        <Button
+          type="submit"
+          value="Register"
+          variant="primary"
+          onClick={handlesubmitlifeStyleassform}
+        >
           Submit
         </Button>
       </Form>
@@ -394,6 +413,7 @@ function LifeStyleAssForm({ handlechange, state, handlesubmitlifeStyleassform })
 
 LifeStyleAssForm.propTypes = {
   handlechange: PropTypes.func.isRequired,
+  handlesubmitlifeStyleassform: PropTypes.func.isRequired,
   state: PropTypes.string.isRequired,
 };
 

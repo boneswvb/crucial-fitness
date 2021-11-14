@@ -2,32 +2,29 @@ import React, { useState } from "react";
 
 import GoalSettingForm from "../components/forms/GoalSettingForm";
 
-function SubmitGoalsettingForm() {  
+function SubmitGoalsettingForm() {
   const [formState, setFormState] = useState("");
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
     return type === "checkbox"
       ? setFormState({
-        ...formState,
-        [name]: checked,
-      })
+          ...formState,
+          [name]: checked,
+        })
       : setFormState({
-        ...formState,
-        [name]: value,
-      });
+          ...formState,
+          [name]: value,
+        });
   };
 
-  const {
-    email,
-    lifstylechanges,
-    easiesttochange,
-    hardesttochange,
-  } = formState;
+  const { email, lifstylechanges, easiesttochange, hardesttochange } =
+    formState;
 
   const handleSubmitGoalsettingForm = async (e) => {
     e.preventDefault();
     try {
-      const date = Date().slice(8, 10) + Date().slice(3, 7) + Date().slice(10, 15);
+      const date =
+        Date().slice(8, 10) + Date().slice(3, 7) + Date().slice(10, 15);
       const body = {
         email,
         lifstylechanges,

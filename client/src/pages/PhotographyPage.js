@@ -1,23 +1,20 @@
-import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import React from "react";
+import { Switch, Route } from "react-router-dom";
 
-import { Helmet } from 'react-helmet';
+import { Helmet } from "react-helmet";
 
-import PhotographyForm from '../components/photography/PhotographyForm';
-import PhotoAthleticsForm from '../components/photography/PhotoAthleticsForm';
-import PhotoHockeyForm from '../components/photography/PhotoHockeyForm';
-import PhotoNetballForm from '../components/photography/PhotoNetballForm';
-import PhotoRugbyForm from '../components/photography/PhotoRugbyForm';
-import PhotoTennisForm from '../components/photography/PhotoTennisForm';
+import PhotographyForm from "../components/photography/PhotographyForm";
+import PhotoAthleticsForm from "../components/photography/PhotoAthleticsForm";
+import PhotoHockeyForm from "../components/photography/PhotoHockeyForm";
+import PhotoNetballForm from "../components/photography/PhotoNetballForm";
+import PhotoRugbyForm from "../components/photography/PhotoRugbyForm";
+import PhotoTennisForm from "../components/photography/PhotoTennisForm";
 
 function PhotographyPage() {
   return (
     <div className="container">
       <Helmet>
-        <meta
-          name="keywords"
-          content="service "
-        />
+        <meta name="keywords" content="service " />
         <meta name="description" content="aaa" />
         <title>Photography - Crucial Fitness & Nutrition</title>
       </Helmet>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 function RateRehabilitationForm() {
   return (
@@ -9,7 +9,9 @@ function RateRehabilitationForm() {
         <thead>
           <tr>
             <th scope="col">#</th>
-            <th scope="col" colSpan="2">Description</th>
+            <th scope="col" colSpan="2">
+              Description
+            </th>
             <th scope="col">Price</th>
           </tr>
         </thead>
@@ -32,7 +34,9 @@ function RateRehabilitationForm() {
         <thead>
           <tr>
             <th scope="col">#</th>
-            <th scope="col" colSpan="2">Per Session</th>
+            <th scope="col" colSpan="2">
+              Per Session
+            </th>
             <th scope="col">Price</th>
           </tr>
         </thead>

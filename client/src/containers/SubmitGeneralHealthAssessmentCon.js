@@ -2,53 +2,49 @@ import React, { useState } from "react";
 
 import GeneralHealthAssessmentForm from "../components/forms/GeneralHealthAssessmentForm";
 
-function SubmitGeneralHealthAssessmentCon() {  
+function SubmitGeneralHealthAssessmentCon() {
   const [formState, setFormState] = useState({});
   const handleChange = (e) => {
-    const {
-      name,
-      value,
-      type,
-      checked,
-    } = e.target;
-    return type === 'checkbox' ? setFormState({
-      ...formState,
-      [name]: checked,
-    })
+    const { name, value, type, checked } = e.target;
+    return type === "checkbox"
+      ? setFormState({
+          ...formState,
+          [name]: checked,
+        })
       : setFormState({
-        ...formState,
-        [name]: value,
-      });
+          ...formState,
+          [name]: value,
+        });
   };
 
   const {
     email,
-        ihavesomeonetotalkto,
-        giveandreceiveaffection,
-        iAmphysicallyactive,
-        iexercise,
-        useseatbelts,
-        isleepwell,
-        ofteneatexcess,
-        overweight,
-        underweight,
-        myidealweight,
-        smokedtabacco,
-        cigarettesperday,
-        illegaldrugs,
-        overusemedication,
-        caffeinecontainingdrinks,
-        averagealcoholintake,
-        morethanfourdrinks,
-        driveafterdrinking,
-        copewithstress,
-        leisuretime,
-        inahurry,
-        angryhostile,
-        positiveoptimistic,
-        tenseuptight,
-        saddepressed,
-        satisfiedjobrole
+    ihavesomeonetotalkto,
+    giveandreceiveaffection,
+    iAmphysicallyactive,
+    iexercise,
+    useseatbelts,
+    isleepwell,
+    ofteneatexcess,
+    overweight,
+    underweight,
+    myidealweight,
+    smokedtabacco,
+    cigarettesperday,
+    illegaldrugs,
+    overusemedication,
+    caffeinecontainingdrinks,
+    averagealcoholintake,
+    morethanfourdrinks,
+    driveafterdrinking,
+    copewithstress,
+    leisuretime,
+    inahurry,
+    angryhostile,
+    positiveoptimistic,
+    tenseuptight,
+    saddepressed,
+    satisfiedjobrole,
   } = formState;
 
   const handleSubmitGeneralHealthAssessmentForm = async (e) => {
@@ -84,7 +80,7 @@ function SubmitGeneralHealthAssessmentCon() {
         tenseuptight,
         saddepressed,
         satisfiedjobrole,
-        date
+        date,
       };
       await fetch("http://localhost:5000/api/GeneralHealthAssessmentForm", {
         method: "POST",

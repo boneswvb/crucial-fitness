@@ -1,22 +1,19 @@
-import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import React from "react";
+import { Switch, Route } from "react-router-dom";
 
-import { Helmet } from 'react-helmet';
+import { Helmet } from "react-helmet";
 
-import RehabilitationForm from '../components/rehabilitation/RehabilitationForm';
-import RehabConcussionRtlForm from '../components/rehabilitation/RehabConcussionRtlForm';
-import RehabConcussionRtpForm from '../components/rehabilitation/RehabConcussionRtpForm';
-import RehabSportMassageForm from '../components/rehabilitation/RehabSportMassageForm';
-import RehabSpotInjuriesForm from '../components/rehabilitation/RehabSpotInjuriesForm';
+import RehabilitationForm from "../components/rehabilitation/RehabilitationForm";
+import RehabConcussionRtlForm from "../components/rehabilitation/RehabConcussionRtlForm";
+import RehabConcussionRtpForm from "../components/rehabilitation/RehabConcussionRtpForm";
+import RehabSportMassageForm from "../components/rehabilitation/RehabSportMassageForm";
+import RehabSpotInjuriesForm from "../components/rehabilitation/RehabSpotInjuriesForm";
 
 function RehabilitationPage() {
   return (
-    <div className="container" style={{ textAlign: 'center' }}>
+    <div className="container" style={{ textAlign: "center" }}>
       <Helmet>
-        <meta
-          name="keywords"
-          content="service "
-        />
+        <meta name="keywords" content="service " />
         <meta name="description" content="aaa" />
         <title>Rehabilitation - Crucial Fitness & Nutrition</title>
       </Helmet>

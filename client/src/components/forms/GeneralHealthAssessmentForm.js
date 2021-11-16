@@ -4,7 +4,6 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 
 import PropTypes from "prop-types";
-import { propTypes } from "react-bootstrap/esm/Image";
 
 function GeneralHealthAssessmentPage({
   state,
@@ -974,14 +973,7 @@ function GeneralHealthAssessmentPage({
 GeneralHealthAssessmentPage.propTypes = {
   handlechange: PropTypes.func.isRequired,
   state: PropTypes.string.isRequired,
-  handlesubmitgoalsettingform: propTypes.func.isRequired,
+  handlesubmitgoalsettingform: PropTypes.func.isRequired,
 };
 
 export default GeneralHealthAssessmentPage;
-
-// General Health Score
-// 85 – 100     Good Self-management
-// 70 – 84       Good Self-management but attention needed in some areas
-// 60 – 69       Fair Self-management but attention needed in several areas
-// 40 – 59       Unsatisfactory Self-management more control needed
-// 0 – 39       Poor Self-management – Danger Zone

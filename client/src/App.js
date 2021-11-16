@@ -22,11 +22,14 @@ import UserProfilePage from "./pages/UserProfilePage";
 import AdminUserProfilePage from "./pages/AdminUserProfilePage";
 import Footer from "./components/footer/Footer";
 
+import UserProfileOwner from "./components/userProfile/UserProfileOwner";
+
 import "./App.css";
 
 function App() {
   return (
     <div>
+      <UserProfileOwner />
       <Header />
       <NavBar />
       <Switch>

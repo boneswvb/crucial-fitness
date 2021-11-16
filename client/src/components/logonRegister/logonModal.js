@@ -73,8 +73,8 @@ function Logon() {
             type="submit"
             value="Register"
             variant="primary"
-            onClick={handleClose}
-            onClick={(e) => getUserInfo(e)}
+            onClick={(handleClose, (e) => getUserInfo(e))}
+            // onClick={(e) => getUserInfo(e)}
           >
             Log on
           </Button>

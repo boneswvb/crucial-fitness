@@ -10,7 +10,6 @@ function LifeStyleAssForm({
   state,
   handlesubmitlifeStyleassform,
 }) {
-  console.log("state", state);
   return (
     <div className="container">
       <h1>Life Style Assessment</h1>

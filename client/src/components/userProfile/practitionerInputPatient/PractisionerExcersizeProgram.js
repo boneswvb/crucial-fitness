@@ -122,7 +122,7 @@ function PractisionerExcersizeProgram({ handlechange, state }) {
                       <Form.Control
                         autoFocus
                         type="date"
-                        name="start"
+                        name="warm_up_start"
                         placeholder="Start"
                         onChange={handlechange}
                         value={state.warm_up_start}

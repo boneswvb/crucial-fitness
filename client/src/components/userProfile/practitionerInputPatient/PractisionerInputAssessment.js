@@ -8,6 +8,7 @@ import Button from "react-bootstrap/Button";
 import Table from "react-bootstrap/Table";
 
 function PractisionerInputAssessment({ handlechange, state }) {
+  console.log("state", state);
   const [lgShow, setLgShow] = useState(false);
 
   return (
@@ -189,13 +190,13 @@ function PractisionerInputAssessment({ handlechange, state }) {
                     </Form.Group>
                   </td>
                   <td>
-                    <Form.Group controlId="bicepight">
+                    <Form.Group controlId="bicepright">
                       <Form.Control
                         type="text"
-                        name="bicepight"
+                        name="bicepright"
                         placeholder="Bicep Right (cm)"
                         onChange={handlechange}
-                        value={state.bicepight}
+                        value={state.bicepright}
                       />
                     </Form.Group>
                   </td>

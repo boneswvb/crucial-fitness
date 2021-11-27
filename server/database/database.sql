@@ -280,3 +280,142 @@ VALUES
     'relationship',
     '2021-01-10'
   );
+
+CREATE TABLE practisioner_comments
+(
+  pc_id INTEGER PRIMARY KEY NOT NULL,
+  email VARCHAR(255) NOT NULL,
+  suggestions VARCHAR(5000),
+  date DATE NOT NULL
+);
+
+INSERT INTO practisioner_comments
+  (email, suggestions, date)
+VALUES
+  ('test@test.com', 'some veru good suggestions the patient is not going to do', '2021-10-27');
+
+CREATE TABLE practisioner_input_assessment
+(
+  pa_id INTEGER PRIMARY KEY NOT NULL,
+  email VARCHAR(255) NOT NULL,
+  age SMALLINT,
+  malefemale VARCHAR(255),
+  height SMALLINT,
+  weight SMALLINT,
+  waist SMALLINT,
+  hip SMALLINT,
+  thighleft SMALLINT,
+  thighright SMALLINT,
+  calfleft SMALLINT,
+  calfright SMALLINT,
+  bicepleft SMALLINT,
+  bicepright SMALLINT,
+  date DATE NOT NULL
+);
+
+INSERT INTO practisioner_input_assessment
+  (
+  email,
+  age,
+  malefemale,
+  height,
+  weight,
+  waist,
+  hip,
+  thighleft,
+  thighright,
+  calfleft,
+  calfright,
+  bicepleft,
+  bicepright,
+  date
+  )
+VALUES 
+(
+  'email@email.com',  
+  52,  
+  'Male',  
+  1.84,  
+  96.8,  
+  102,  
+  95,  
+  203,  
+  202,  
+  102,  
+  101,  
+  956,  
+  159, 
+  '2021-10-27'
+);
+
+CREATE TABLE practisioner_excersize_program
+(
+  pe_id INTEGER PRIMARY KEY NOT NULL,
+  email VARCHAR(255) NOT NULL,
+  warm_up_exercises VARCHAR(255),
+  warm_up_reps SMALLINT,
+  warm_up_wts SMALLINT,
+  warm_up_weeks SMALLINT,
+  warm_up_frequency SMALLINT,
+  warm_up_start DATE,
+  strength_exercises VARCHAR(255),
+  strength_reps SMALLINT,
+  strength_wts SMALLINT,
+  strength_weeks SMALLINT,
+  strength_frequency SMALLINT,
+  strength_start DATE,
+  cardio_exercises VARCHAR(255),
+  cardio_reps SMALLINT,
+  cardio_wts SMALLINT,
+  cardio_weeks SMALLINT,
+  cardio_frequency SMALLINT,
+  cardio_start DATE,
+  date DATE NOT NULL
+);
+
+INSERT INTO practisioner_excersize_program
+  (
+    email,
+    warm_up_exercises,
+    warm_up_reps,
+    warm_up_wts,
+    warm_up_weeks,
+    warm_up_frequency,
+    warm_up_start,
+    strength_exercises,
+    strength_reps,
+    strength_wts,
+    strength_weeks,
+    strength_frequency,
+    strength_start,
+    cardio_exercises,
+    cardio_reps,
+    cardio_wts,
+    cardio_weeks,
+    cardio_frequency,
+    cardio_start,
+    date
+  )
+VALUES
+  (
+    'test@test.com',
+  'warm_up_exercises',
+  2,
+  2,
+  2,
+  2,
+  '2021-10-27',
+  'strength_exercises',
+  3,
+  3,
+  3,
+  3,
+  '2021-10-27',
+  'cardio_exercises',
+  4,
+  4,
+  4,
+  4,
+  '2021-10-27',
+  '2021-10-27'
+);

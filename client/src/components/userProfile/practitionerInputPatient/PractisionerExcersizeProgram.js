@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 
+import PropTypes from "prop-types";
+
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Table from "react-bootstrap/Table";
 
-function PractisionerExcersizeProgram() {
+function PractisionerExcersizeProgram({ handlechange, state }) {
   const [lgShow, setLgShow] = useState(false);
   return (
     <div className="container">
@@ -25,45 +27,14 @@ function PractisionerExcersizeProgram() {
         </Modal.Header>
         <Modal.Body>
           <Form>
-            <Form.Group size="lg" controlId="captureddate">
-              <Form.Label>Captured Date</Form.Label>
-              <Form.Control
-                autoFocus
-                type="date"
-                name="captureddate"
-                placeholder="Captured Date"
-                // onChange={handlechange}
-                // value={state.captureddate}
-              />
-            </Form.Group>
             <Form.Group size="lg" controlId="email">
               <Form.Label>Email</Form.Label>
               <Form.Control
                 autoFocus
                 type="email"
                 name="email"
-                // onChange={handlechange}
-                // value={state.email}
-              />
-            </Form.Group>
-            <Form.Group controlId="fullname">
-              <Form.Label>Full Names</Form.Label>
-              <Form.Control
-                type="text"
-                name="fullname"
-                placeholder="Full Names"
-                // onChange={handlechange}
-                // value={state.fullname}
-              />
-            </Form.Group>
-            <Form.Group controlId="lastname">
-              <Form.Label>Last Name</Form.Label>
-              <Form.Control
-                type="text"
-                name="lastname"
-                placeholder="Last Name"
-                // onChange={handlechange}
-                // value={state.lastname}
+                onChange={handlechange}
+                value={state.email}
               />
             </Form.Group>
             <h3>Warm-up</h3>
@@ -86,10 +57,10 @@ function PractisionerExcersizeProgram() {
                       <Form.Control
                         autoFocus
                         type="text"
-                        name="exercises"
+                        name="warm_up_exercises"
                         placeholder="Exercises"
-                        // onChange={handlechange}
-                        // value={state.exercises}
+                        onChange={handlechange}
+                        value={state.warm_up_exercises}
                       />
                     </Form.Group>
                   </td>
@@ -99,10 +70,10 @@ function PractisionerExcersizeProgram() {
                       <Form.Control
                         autoFocus
                         type="text"
-                        name="reps"
+                        name="warm_up_reps"
                         placeholder="Reps"
-                        // onChange={handlechange}
-                        // value={state.reps}
+                        onChange={handlechange}
+                        value={state.warm_up_reps}
                       />
                     </Form.Group>
                   </td>
@@ -112,10 +83,10 @@ function PractisionerExcersizeProgram() {
                       <Form.Control
                         autoFocus
                         type="text"
-                        name="wts"
+                        name="warm_up_wts"
                         placeholder="WTS"
-                        // onChange={handlechange}
-                        // value={state.wts}
+                        onChange={handlechange}
+                        value={state.warm_up_wts}
                       />
                     </Form.Group>
                   </td>
@@ -125,10 +96,10 @@ function PractisionerExcersizeProgram() {
                       <Form.Control
                         autoFocus
                         type="text"
-                        name="weeks"
+                        name="warm_up_weeks"
                         placeholder="Weeks"
-                        // onChange={handlechange}
-                        // value={state.weeks}
+                        onChange={handlechange}
+                        value={state.warm_up_weeks}
                       />
                     </Form.Group>
                   </td>
@@ -138,10 +109,10 @@ function PractisionerExcersizeProgram() {
                       <Form.Control
                         autoFocus
                         type="text"
-                        name="frequency"
+                        name="warm_up_frequency"
                         placeholder="Frequency"
-                        // onChange={handlechange}
-                        // value={state.frequency}
+                        onChange={handlechange}
+                        value={state.warm_up_frequency}
                       />
                     </Form.Group>
                   </td>
@@ -150,11 +121,11 @@ function PractisionerExcersizeProgram() {
                       <Form.Label>Start</Form.Label>
                       <Form.Control
                         autoFocus
-                        type="text"
+                        type="date"
                         name="start"
                         placeholder="Start"
-                        // onChange={handlechange}
-                        // value={state.start}
+                        onChange={handlechange}
+                        value={state.warm_up_start}
                       />
                     </Form.Group>
                   </td>
@@ -191,10 +162,10 @@ function PractisionerExcersizeProgram() {
                       <Form.Control
                         autoFocus
                         type="text"
-                        name="exercises"
+                        name="strength_exercises"
                         placeholder="Exercises"
-                        // onChange={handlechange}
-                        // value={state.exercises}
+                        onChange={handlechange}
+                        value={state.strength_exercises}
                       />
                     </Form.Group>
                   </td>
@@ -204,10 +175,10 @@ function PractisionerExcersizeProgram() {
                       <Form.Control
                         autoFocus
                         type="text"
-                        name="reps"
+                        name="strength_reps"
                         placeholder="Reps"
-                        // onChange={handlechange}
-                        // value={state.reps}
+                        onChange={handlechange}
+                        value={state.strength_reps}
                       />
                     </Form.Group>
                   </td>
@@ -217,10 +188,10 @@ function PractisionerExcersizeProgram() {
                       <Form.Control
                         autoFocus
                         type="text"
-                        name="wts"
+                        name="strength_wts"
                         placeholder="WTS"
-                        // onChange={handlechange}
-                        // value={state.wts}
+                        onChange={handlechange}
+                        value={state.strength_wts}
                       />
                     </Form.Group>
                   </td>
@@ -230,10 +201,10 @@ function PractisionerExcersizeProgram() {
                       <Form.Control
                         autoFocus
                         type="text"
-                        name="weeks"
+                        name="strength_weeks"
                         placeholder="Weeks"
-                        // onChange={handlechange}
-                        // value={state.weeks}
+                        onChange={handlechange}
+                        value={state.strength_weeks}
                       />
                     </Form.Group>
                   </td>
@@ -243,10 +214,10 @@ function PractisionerExcersizeProgram() {
                       <Form.Control
                         autoFocus
                         type="text"
-                        name="frequency"
+                        name="strength_frequency"
                         placeholder="Frequency"
-                        // onChange={handlechange}
-                        // value={state.frequency}
+                        onChange={handlechange}
+                        value={state.strength_frequency}
                       />
                     </Form.Group>
                   </td>
@@ -255,11 +226,11 @@ function PractisionerExcersizeProgram() {
                       <Form.Label>Start</Form.Label>
                       <Form.Control
                         autoFocus
-                        type="text"
-                        name="start"
+                        type="date"
+                        name="strength_start"
                         placeholder="Start"
-                        // onChange={handlechange}
-                        // value={state.start}
+                        onChange={handlechange}
+                        value={state.strength_start}
                       />
                     </Form.Group>
                   </td>
@@ -296,10 +267,10 @@ function PractisionerExcersizeProgram() {
                       <Form.Control
                         autoFocus
                         type="text"
-                        name="exercises"
+                        name="cardio_exercises"
                         placeholder="Exercises"
-                        // onChange={handlechange}
-                        // value={state.exercises}
+                        onChange={handlechange}
+                        value={state.cardio_exercises}
                       />
                     </Form.Group>
                   </td>
@@ -309,10 +280,10 @@ function PractisionerExcersizeProgram() {
                       <Form.Control
                         autoFocus
                         type="text"
-                        name="reps"
+                        name="cardio_reps"
                         placeholder="Reps"
-                        // onChange={handlechange}
-                        // value={state.reps}
+                        onChange={handlechange}
+                        value={state.cardio_reps}
                       />
                     </Form.Group>
                   </td>
@@ -322,10 +293,10 @@ function PractisionerExcersizeProgram() {
                       <Form.Control
                         autoFocus
                         type="text"
-                        name="wts"
+                        name="cardio_wts"
                         placeholder="WTS"
-                        // onChange={handlechange}
-                        // value={state.wts}
+                        onChange={handlechange}
+                        value={state.cardio_wts}
                       />
                     </Form.Group>
                   </td>
@@ -335,10 +306,10 @@ function PractisionerExcersizeProgram() {
                       <Form.Control
                         autoFocus
                         type="text"
-                        name="weeks"
+                        name="cardio_weeks"
                         placeholder="Weeks"
-                        // onChange={handlechange}
-                        // value={state.weeks}
+                        onChange={handlechange}
+                        value={state.cardio_weeks}
                       />
                     </Form.Group>
                   </td>
@@ -348,10 +319,10 @@ function PractisionerExcersizeProgram() {
                       <Form.Control
                         autoFocus
                         type="text"
-                        name="frequency"
+                        name="cardio_frequency"
                         placeholder="Frequency"
-                        // onChange={handlechange}
-                        // value={state.frequency}
+                        onChange={handlechange}
+                        value={state.cardio_frequency}
                       />
                     </Form.Group>
                   </td>
@@ -360,11 +331,11 @@ function PractisionerExcersizeProgram() {
                       <Form.Label>Start</Form.Label>
                       <Form.Control
                         autoFocus
-                        type="text"
-                        name="start"
+                        type="date"
+                        name="cardio_start"
                         placeholder="Start"
-                        // onChange={handlechange}
-                        // value={state.start}
+                        onChange={handlechange}
+                        value={state.cardio_start}
                       />
                     </Form.Group>
                   </td>
@@ -401,10 +372,10 @@ function PractisionerExcersizeProgram() {
                       <Form.Control
                         autoFocus
                         type="text"
-                        name="exercises"
+                        name="cool_down_exercises"
                         placeholder="Exercises"
-                        // onChange={handlechange}
-                        // value={state.exercises}
+                        onChange={handlechange}
+                        value={state.cool_down_exercises}
                       />
                     </Form.Group>
                   </td>
@@ -414,10 +385,10 @@ function PractisionerExcersizeProgram() {
                       <Form.Control
                         autoFocus
                         type="text"
-                        name="reps"
+                        name="cool_down_reps"
                         placeholder="Reps"
-                        // onChange={handlechange}
-                        // value={state.reps}
+                        onChange={handlechange}
+                        value={state.cool_down_reps}
                       />
                     </Form.Group>
                   </td>
@@ -427,10 +398,10 @@ function PractisionerExcersizeProgram() {
                       <Form.Control
                         autoFocus
                         type="text"
-                        name="wts"
+                        name="cool_down_wts"
                         placeholder="WTS"
-                        // onChange={handlechange}
-                        // value={state.wts}
+                        onChange={handlechange}
+                        value={state.cool_down_wts}
                       />
                     </Form.Group>
                   </td>
@@ -440,10 +411,10 @@ function PractisionerExcersizeProgram() {
                       <Form.Control
                         autoFocus
                         type="text"
-                        name="weeks"
+                        name="cool_down_weeks"
                         placeholder="Weeks"
-                        // onChange={handlechange}
-                        // value={state.weeks}
+                        onChange={handlechange}
+                        value={state.cool_down_weeks}
                       />
                     </Form.Group>
                   </td>
@@ -453,10 +424,10 @@ function PractisionerExcersizeProgram() {
                       <Form.Control
                         autoFocus
                         type="text"
-                        name="frequency"
+                        name="cool_down_frequency"
                         placeholder="Frequency"
-                        // onChange={handlechange}
-                        // value={state.frequency}
+                        onChange={handlechange}
+                        value={state.cool_down_frequency}
                       />
                     </Form.Group>
                   </td>
@@ -465,11 +436,11 @@ function PractisionerExcersizeProgram() {
                       <Form.Label>Start</Form.Label>
                       <Form.Control
                         autoFocus
-                        type="text"
-                        name="start"
+                        type="date"
+                        name="cool_down_start"
                         placeholder="Start"
-                        // onChange={handlechange}
-                        // value={state.start}
+                        onChange={handlechange}
+                        value={state.cool_down_start}
                       />
                     </Form.Group>
                   </td>
@@ -497,17 +468,16 @@ function PractisionerExcersizeProgram() {
           >
             Close
           </Button>
-          <Button
-            variant="outline-success"
-            type="submit"
-            value="submit"
-            // onClick={}
-          >
-            Submit
-          </Button>
         </Modal.Footer>
       </Modal>
     </div>
   );
 }
+
+PractisionerExcersizeProgram.propTypes = {
+  handlechange: PropTypes.string.isRequired,
+  state: PropTypes.string.isRequired,
+  email: PropTypes.string.isRequired,
+};
+
 export default PractisionerExcersizeProgram;

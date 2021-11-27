@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 
+import PropTypes from "prop-types";
+
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import Table from "react-bootstrap/Table";
 
-function PractisionerInputAssessment() {
+function PractisionerInputAssessment({ handlechange, state }) {
   const [lgShow, setLgShow] = useState(false);
 
   return (
@@ -25,45 +28,14 @@ function PractisionerInputAssessment() {
         </Modal.Header>
         <Modal.Body>
           <Form>
-            <Form.Group size="lg" controlId="captureddate">
-              <Form.Label>Captured Date</Form.Label>
-              <Form.Control
-                autoFocus
-                type="date"
-                name="captureddate"
-                placeholder="Captured Date"
-                // onChange={handlechange}
-                // value={state.captureddate}
-              />
-            </Form.Group>
             <Form.Group size="lg" controlId="email">
               <Form.Label>Email</Form.Label>
               <Form.Control
                 autoFocus
                 type="email"
                 name="email"
-                // onChange={handlechange}
-                // value={state.email}
-              />
-            </Form.Group>
-            <Form.Group controlId="fullname">
-              <Form.Label>Full Names</Form.Label>
-              <Form.Control
-                type="text"
-                name="fullname"
-                placeholder="Full Names"
-                // onChange={handlechange}
-                // value={state.fullname}
-              />
-            </Form.Group>
-            <Form.Group controlId="lastname">
-              <Form.Label>Last Name</Form.Label>
-              <Form.Control
-                type="text"
-                name="lastname"
-                placeholder="Last Name"
-                // onChange={handlechange}
-                // value={state.lastname}
+                onChange={handlechange}
+                value={state.email}
               />
             </Form.Group>
             <Form.Group controlId="age">
@@ -72,8 +44,8 @@ function PractisionerInputAssessment() {
                 type="text"
                 name="age"
                 placeholder="Age"
-                // onChange={handlechange}
-                // value={state.age}
+                onChange={handlechange}
+                value={state.age}
               />
             </Form.Group>
             <Form.Group controlId="familyAndFriends1">
@@ -83,8 +55,8 @@ function PractisionerInputAssessment() {
                   type="radio"
                   name="malefemale"
                   value="Male"
-                  // checked={state.ihavesomeonetotalkto === "4"}
-                  // onChange={handlechange}
+                  checked={state.malefemale === "Male"}
+                  onChange={handlechange}
                 />
               </Form.Label>
               <br />
@@ -94,122 +66,142 @@ function PractisionerInputAssessment() {
                   type="radio"
                   name="malefemale"
                   value="Female"
-                  // checked={state.ihavesomeonetotalkto === "2"}
-                  // onChange={handlechange}
+                  checked={state.malefemale === "Female"}
+                  onChange={handlechange}
                 />
               </Form.Label>
             </Form.Group>
-            <Form.Group controlId="height">
-              <Form.Label>Height (cm)</Form.Label>
-              <Form.Control
-                type="text"
-                name="height"
-                placeholder="Height"
-                // onChange={handlechange}
-                // value={state.height}
-              />
-            </Form.Group>
-            <Form.Group controlId="weight">
-              <Form.Label>Weight (kg)</Form.Label>
-              <Form.Control
-                type="text"
-                name="weight"
-                placeholder="Weight (kg)"
-                // onChange={handlechange}
-                // value={state.weight}
-              />
-            </Form.Group>
-            <Form.Group controlId="chest">
-              <Form.Label>Chest (cm)</Form.Label>
-              <Form.Control
-                type="text"
-                name="chest"
-                placeholder="Chest (cm)"
-                // onChange={handlechange}
-                // value={state.chest}
-              />
-            </Form.Group>
-            <Form.Group controlId="waist">
-              <Form.Label>Waist (cm)</Form.Label>
-              <Form.Control
-                type="text"
-                name="waist"
-                placeholder="Waist (cm)"
-                // onChange={handlechange}
-                // value={state.waist}
-              />
-            </Form.Group>
-            <Form.Group controlId="hip">
-              <Form.Label>Hip (cm)</Form.Label>
-              <Form.Control
-                type="text"
-                name="hip"
-                placeholder="Hip (cm)"
-                // onChange={handlechange}
-                // value={state.hip}
-              />
-            </Form.Group>
-            <Form.Group controlId="thighleft">
-              <Form.Label>Thigh Left (cm)</Form.Label>
-              <Form.Control
-                type="text"
-                name="thighleft"
-                placeholder="Thigh Left (cm)"
-                // onChange={handlechange}
-                // value={state.thighleft}
-              />
-            </Form.Group>
-            <Form.Group controlId="thighright">
-              <Form.Label> Thigh Right (cm)</Form.Label>
-              <Form.Control
-                type="text"
-                name="thighright"
-                placeholder=" Thigh Right (cm)"
-                // onChange={handlechange}
-                // value={state.thighright}
-              />
-            </Form.Group>
-            <Form.Group controlId="calfleft">
-              <Form.Label>Calf Left (cm)</Form.Label>
-              <Form.Control
-                type="text"
-                name="calfleft"
-                placeholder="Calf Left (cm)"
-                // onChange={handlechange}
-                // value={state.calfleft}
-              />
-            </Form.Group>
-            <Form.Group controlId="calfright">
-              <Form.Label>Calf Right (cm)</Form.Label>
-              <Form.Control
-                type="text"
-                name="calfright"
-                placeholder="Calf Right (cm)"
-                // onChange={handlechange}
-                // value={state.calfright}
-              />
-            </Form.Group>
-            <Form.Group controlId="bicepleft">
-              <Form.Label>Bicep Left (cm)</Form.Label>
-              <Form.Control
-                type="text"
-                name="aaa"
-                placeholder="Bicep Left (cm)"
-                // onChange={handlechange}
-                // value={state.aaa}
-              />
-            </Form.Group>
-
-            <Form.Group controlId="bicepight">
-              <Form.Label>Bicep Right (cm)</Form.Label>
-              <Form.Control
-                type="text"
-                name="bicepight"
-                placeholder="Bicep Right (cm)"
-                // onChange={handlechange}
-                // value={state.bicepight}
-              />
-            </Form.Group>
+            <Table>
+              <tbody>
+                <tr>
+                  <td>
+                    <Form.Group controlId="height">
+                      <Form.Control
+                        type="text"
+                        name="height"
+                        placeholder="Height"
+                        onChange={handlechange}
+                        value={state.height}
+                      />
+                    </Form.Group>
+                  </td>
+                  <td>
+                    <Form.Group controlId="weight">
+                      <Form.Control
+                        type="text"
+                        name="weight"
+                        placeholder="Weight (kg)"
+                        onChange={handlechange}
+                        value={state.weight}
+                      />
+                    </Form.Group>
+                  </td>
+                  <td>
+                    <Form.Group controlId="chest">
+                      <Form.Control
+                        type="text"
+                        name="chest"
+                        placeholder="Chest (cm)"
+                        onChange={handlechange}
+                        value={state.chest}
+                      />
+                    </Form.Group>
+                  </td>
+                  <td>
+                    <Form.Group controlId="waist">
+                      <Form.Control
+                        type="text"
+                        name="waist"
+                        placeholder="Waist (cm)"
+                        onChange={handlechange}
+                        value={state.waist}
+                      />
+                    </Form.Group>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <Form.Group controlId="hip">
+                      <Form.Control
+                        type="text"
+                        name="hip"
+                        placeholder="Hip (cm)"
+                        onChange={handlechange}
+                        value={state.hip}
+                      />
+                    </Form.Group>
+                  </td>
+                  <td>
+                    <Form.Group controlId="thighleft">
+                      <Form.Control
+                        type="text"
+                        name="thighleft"
+                        placeholder="Thigh Left (cm)"
+                        onChange={handlechange}
+                        value={state.thighleft}
+                      />
+                    </Form.Group>
+                  </td>
+                  <td>
+                    <Form.Group controlId="thighright">
+                      <Form.Control
+                        type="text"
+                        name="thighright"
+                        placeholder=" Thigh Right (cm)"
+                        onChange={handlechange}
+                        value={state.thighright}
+                      />
+                    </Form.Group>
+                  </td>
+                  <td>
+                    <Form.Group controlId="calfleft">
+                      <Form.Control
+                        type="text"
+                        name="calfleft"
+                        placeholder="Calf Left (cm)"
+                        onChange={handlechange}
+                        value={state.calfleft}
+                      />
+                    </Form.Group>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <Form.Group controlId="calfright">
+                      <Form.Control
+                        type="text"
+                        name="calfright"
+                        placeholder="Calf Right (cm)"
+                        onChange={handlechange}
+                        value={state.calfright}
+                      />
+                    </Form.Group>
+                  </td>
+                  <td>
+                    <Form.Group controlId="bicepleft">
+                      <Form.Control
+                        type="text"
+                        name="bicepleft"
+                        placeholder="Bicep Left (cm)"
+                        onChange={handlechange}
+                        value={state.aaa}
+                      />
+                    </Form.Group>
+                  </td>
+                  <td>
+                    <Form.Group controlId="bicepight">
+                      <Form.Control
+                        type="text"
+                        name="bicepight"
+                        placeholder="Bicep Right (cm)"
+                        onChange={handlechange}
+                        value={state.bicepight}
+                      />
+                    </Form.Group>
+                  </td>
+                </tr>
+              </tbody>
+            </Table>
             <Modal.Footer>
               <Button
                 variant="outline-secondary"
@@ -234,4 +226,10 @@ function PractisionerInputAssessment() {
     </div>
   );
 }
+
+PractisionerInputAssessment.propTypes = {
+  handlechange: PropTypes.string.isRequired,
+  state: PropTypes.string.isRequired,
+  email: PropTypes.string.isRequired,
+};
 export default PractisionerInputAssessment;

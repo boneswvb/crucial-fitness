@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 
+import PropTypes from "prop-types";
+
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 
-function PractisionerComments() {
+function PractisionerComments({ handlechange, state }) {
   const [lgShow, setLgShow] = useState(false);
   return (
     <div className="container">
@@ -24,45 +26,14 @@ function PractisionerComments() {
         </Modal.Header>
         <Modal.Body>
           <Form>
-            <Form.Group size="lg" controlId="captureddate">
-              <Form.Label>Captured Date</Form.Label>
-              <Form.Control
-                autoFocus
-                type="date"
-                name="captureddate"
-                placeholder="Captured Date"
-                // onChange={handlechange}
-                // value={state.captureddate}
-              />
-            </Form.Group>
             <Form.Group size="lg" controlId="email">
               <Form.Label>Email</Form.Label>
               <Form.Control
                 autoFocus
                 type="email"
                 name="email"
-                // onChange={handlechange}
-                // value={state.email}
-              />
-            </Form.Group>
-            <Form.Group controlId="fullname">
-              <Form.Label>Full Names</Form.Label>
-              <Form.Control
-                type="text"
-                name="fullname"
-                placeholder="Full Names"
-                // onChange={handlechange}
-                // value={state.fullname}
-              />
-            </Form.Group>
-            <Form.Group controlId="lastname">
-              <Form.Label>Last Name</Form.Label>
-              <Form.Control
-                type="text"
-                name="lastname"
-                placeholder="Last Name"
-                // onChange={handlechange}
-                // value={state.lastname}
+                onChange={handlechange}
+                value={state.email}
               />
             </Form.Group>
             <Form.Group controlId="suggestions">
@@ -71,8 +42,8 @@ function PractisionerComments() {
                 as="textarea"
                 rows={3}
                 name="suggestions"
-                // onChange={handlechange}
-                // value={state.suggestions}
+                onChange={handlechange}
+                value={state.suggestions}
               />
             </Form.Group>
           </Form>
@@ -99,4 +70,12 @@ function PractisionerComments() {
     </div>
   );
 }
+
+PractisionerComments.propTypes = {
+  handlechange: PropTypes.string.isRequired,
+  state: PropTypes.string.isRequired,
+  email: PropTypes.string.isRequired,
+  suggestions: PropTypes.string.isRequired,
+};
+
 export default PractisionerComments;

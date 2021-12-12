@@ -13,6 +13,7 @@ import PractisionerLifeStyleAssFormCom from "./ownersProfileIndividuelCom/Practi
 import PractisionerGoalsettingComp from "./ownersProfileIndividuelCom/PractisionerGoalsettingComp";
 import PractisionersPatientAssessmentCom from "./ownersProfileIndividuelCom/PractisionersPatientAssessmentCom";
 import PractisionerPatientExersizeProgress from "./ownersProfileIndividuelCom/PractisionerPatientExersizeProgress";
+import PractisionerCommentsCom from "./ownersProfileIndividuelCom/PractisionerCommentsCom";
 
 function UserProfileOwner() {
   return (
@@ -29,23 +30,33 @@ function UserProfileOwner() {
         <Button variant="success">Search</Button>
       </InputGroup>
 
+      <hr />
+      <h3 style={{ textAlign: "center" }}>Input Patient Information</h3>
       <div className="d-flex justify-content-around">
         <SubmitPractisionerComments />
         <SubmitPractisionerExcersizeProgram />
         <SubmitPractisionerInputAssessment />
       </div>
+
       <hr />
+      <h3 style={{ textAlign: "center" }}>
+        Check Patient Information & Completed form Information
+      </h3>
       <div className="d-flex justify-content-around">
         <PractisionerPatientDetailsCom />
         <PrctiosionerGeneralHealthAssessmentCon />
         <PractisionerLifeStyleAssFormCom />
         <PractisionerGoalsettingComp />
       </div>
+
       <hr />
+      <h3 style={{ textAlign: "center" }}>Track patient Exersize Progress</h3>
       <div className="d-flex justify-content-around">
-        <PractisionersPatientAssessmentCom />
+        <PractisionerCommentsCom />
         <PractisionerPatientExersizeProgress />
+        <PractisionersPatientAssessmentCom />
       </div>
+
       <hr />
     </div>
   );

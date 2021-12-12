@@ -10,7 +10,7 @@ function PrctiosionerGeneralHealthAssessmentCon() {
   const handleShow = () => setShow(true);
   return (
     <div>
-      <Button variant="light" onClick={handleShow}>
+      <Button variant="outline-success" onClick={handleShow}>
         <p>General Health Assessment</p>
       </Button>
       <Modal size="xl" show={show} onHide={handleClose}>
@@ -24,12 +24,6 @@ function PrctiosionerGeneralHealthAssessmentCon() {
         <Modal.Body>
           <h3>Assessment Date:</h3>
           <Table responsive>
-            <thead>
-              <tr>
-                <th>Headings</th>
-                <th>Patient Details</th>
-              </tr>
-            </thead>
             <tbody>
               <tr>
                 <td>

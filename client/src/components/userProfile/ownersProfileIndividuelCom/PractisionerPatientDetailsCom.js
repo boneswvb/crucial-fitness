@@ -10,7 +10,7 @@ function PatientDetailsCom() {
   const handleShow = () => setShow(true);
   return (
     <div>
-      <Button variant="light" onClick={handleShow}>
+      <Button variant="outline-success" onClick={handleShow}>
         Customer Details
       </Button>
       <Modal size="xl" show={show} onHide={handleClose}>
@@ -28,7 +28,6 @@ function PatientDetailsCom() {
                 <tr>
                   <th>Headings</th>
                   <th>Patient Details</th>
-                  <th>Date</th>
                 </tr>
               </thead>
               <tbody>

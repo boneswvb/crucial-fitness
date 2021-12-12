@@ -4,30 +4,29 @@ import Modal from "react-bootstrap/Modal";
 import Table from "react-bootstrap/Table";
 import Button from "react-bootstrap/Button";
 
-function PractisionerGoalsettingComp() {
+function PractisionerCommentsCom() {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   return (
     <div>
-      <Button variant="outline-success" onClick={handleShow}>
-        <p>Goal Setting</p>
+      <Button variant="outline-warning" onClick={handleShow}>
+        <p>Comments</p>
       </Button>
       <Modal size="xl" show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>
             <h4>customer Email</h4>
             <h5>customer Name & Surname</h5>
-            <h6>Working with: Goal Setting</h6>
+            <h6>Working with: Practisioner Comments</h6>
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <h3>Assessment Date:</h3>
           <Table responsive>
             <tbody>
               <tr>
                 <td>
-                  <strong>Full Names</strong>
+                  <strong>Assessment Date:</strong>
                 </td>
                 <td>The answer will be here</td>
               </tr>
@@ -45,4 +44,4 @@ function PractisionerGoalsettingComp() {
   );
 }
 
-export default PractisionerGoalsettingComp;
+export default PractisionerCommentsCom;

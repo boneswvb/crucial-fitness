@@ -22,14 +22,15 @@ import UserProfilePage from "./pages/UserProfilePage";
 import AdminUserProfilePage from "./pages/AdminUserProfilePage";
 import Footer from "./components/footer/Footer";
 
-import UserProfileOwner from "./components/userProfile/UserProfileOwner";
-
+// import PractisionerSearchFunctCon from "./containers/PractisionersStateComponents/PractisionerSearchFunctCon";
+// import Test from "./Test";
 import "./App.css";
 
 function App() {
   return (
     <div>
-      <UserProfileOwner />
+      {/* <PractisionerSearchFunctCon /> */}
+      {/* <Test /> */}
       <Header />
       <NavBar />
       <Switch>

@@ -6,7 +6,7 @@ function UserNameCom({ fullname, lastname }) {
   return (
     <div>
       <h2>
-        Welcome back {fullname} {lastname}
+        Welcome back: {fullname} {lastname}
       </h2>
     </div>
   );

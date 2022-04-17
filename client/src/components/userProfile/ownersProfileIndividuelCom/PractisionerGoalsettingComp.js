@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 
+import PropTypes from "prop-types";
+
 import Modal from "react-bootstrap/Modal";
 import Table from "react-bootstrap/Table";
 import Button from "react-bootstrap/Button";
 
-function PractisionerGoalsettingComp() {
+function PractisionerGoalsettingComp({ goalsetting }) {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -16,22 +18,44 @@ function PractisionerGoalsettingComp() {
       <Modal size="xl" show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>
-            <h4>customer Email</h4>
+            <h4>Email: </h4>
             <h5>customer Name & Surname</h5>
             <h6>Working with: Goal Setting</h6>
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <h3>Assessment Date:</h3>
           <Table responsive>
-            <tbody>
-              <tr>
-                <td>
-                  <strong>Full Names</strong>
-                </td>
-                <td>The answer will be here</td>
-              </tr>
-            </tbody>
+            {goalsetting.map((items) => (
+              <tbody>
+                <tr style={{ colspan: 2 }}>
+                  <td>
+                    <p>
+                      <strong>Assessment Date:</strong> {items.date}
+                    </p>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <strong>
+                      Name 3 Lifstyle Changes <br /> You Need To Do
+                    </strong>
+                  </td>
+                  <td>{items.lifstylechanges}</td>
+                </tr>
+                <tr>
+                  <td>
+                    <strong>Easiest To Change</strong>
+                  </td>
+                  <td>{items.easiesttochange}</td>
+                </tr>
+                <tr>
+                  <td>
+                    <strong>Hardest To Change</strong>
+                  </td>
+                  <td>{items.hardesttochange}</td>
+                </tr>
+              </tbody>
+            ))}
           </Table>
         </Modal.Body>
         <Modal.Footer>
@@ -44,5 +68,9 @@ function PractisionerGoalsettingComp() {
     </div>
   );
 }
+
+PractisionerGoalsettingComp.propTypes = {
+  goalsetting: PropTypes.string.isRequired,
+};
 
 export default PractisionerGoalsettingComp;

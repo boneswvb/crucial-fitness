@@ -18,7 +18,7 @@ function SubmitPractisionerExcersizeProgram() {
         });
   };
   return (
-    <div className="d-flex justify-content-around">
+    <div>
       <PractisionerExcersizeProgram
         handlechange={handleChange}
         state={formState}

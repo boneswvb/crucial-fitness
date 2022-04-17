@@ -7,6 +7,7 @@ function PatientDetailsCon() {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
     return type === "checkbox"

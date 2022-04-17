@@ -23,9 +23,11 @@ function PatientDetails({
         data-email="from_email@example.com"
         action="https://script.google.com/macros/s/AKfycbw-DZp1Q1Ad8tQCn5N3B4RJlYqGArQH5_pVGrH3wHLnne6gojVf0gV5c3s9fG2mVqTizw/exec"
       >
+        {/* {!patientdetailsreceived ? ( */}
         <Button variant="secondary" onClick={handleshow}>
           Submit Personal Details
         </Button>
+        {/* ) : null} */}
         <br />
         <Modal show={show} onHide={handleclose}>
           <Modal.Header closeButton>
@@ -163,6 +165,11 @@ function PatientDetails({
 PatientDetails.propTypes = {
   handlechange: PropTypes.func.isRequired,
   state: PropTypes.string.isRequired,
+  handlesubmitpatdetails: PropTypes.func.isRequired,
+  handleclose: PropTypes.bool.isRequired,
+  handleshow: PropTypes.bool.isRequired,
+  show: PropTypes.bool.isRequired,
+  // patientdetailsreceived: PropTypes.bool.isRequired,
 };
 
 export default PatientDetails;

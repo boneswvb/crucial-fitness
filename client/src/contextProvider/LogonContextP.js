@@ -50,7 +50,7 @@ function ContextProvider({ children }) {
           setIsSignedOn(true);
           handleClose();
         } else {
-          alert("Incorrect log on info provided");
+          alert("Please check you credentials");
         }
       });
   };
@@ -74,7 +74,11 @@ function ContextProvider({ children }) {
 }
 
 ContextProvider.propTypes = {
-  children: PropTypes.string.isRequired,
+  children: PropTypes.oneOfType([
+    PropTypes.bool,
+    PropTypes.number,
+    PropTypes.string,
+  ]).isRequired,
 };
 
 export { ContextProvider, Context };

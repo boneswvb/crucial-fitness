@@ -11,56 +11,28 @@ function PatientPersonalDetailsCon() {
     try {
       const response = await fetch("http://localhost:5000/api/PatientDetails");
       const jsonData = await response.json();
-      for (let i = 0; i < jsonData.length; i++) {
+      for (let i = 0; i < jsonData.length; i += 1) {
         return jsonData.map((data) =>
           userInfo.email === data.email
-            ? setAllResults((allResults) => [...allResults, data])
+            ? setAllResults(() => [...allResults, data])
             : null
         );
       }
     } catch (err) {
       console.error(err.message);
     }
+    return "Transaction completed successfully";
   };
-
-  // const getGoalSettingInfo = async () => {
-  //   try {
-  //     const response = await fetch('http://localhost:5000/api/GoalSettingForm')
-  //     const jsonData = await response.json()
-  //     for (let i = 0; i < jsonData.length; i++) {
-  //       return jsonData.map(data => userInfo.email === data.email ? setAllResults(allResults => [...allResults, data]) : null)
-  //     }
-  //   }
-  //   catch (err) {
-  //     console.error(err.message)
-  //   }
-  // }
-
-  // const getLifeStyleAssInfo = async () => {
-  //   try {
-  //     const response = await fetch('http://localhost:5000/api/LifeStyleAssForm')
-  //     const jsonData = await response.json()
-  //     for (let i = 0; i < jsonData.length; i++) {
-  //       return jsonData.map(data => userInfo.email === data.email ? setAllResults(allResults => [...allResults, data]) : null)
-  //     }
-  //   }
-  //   catch (err) {
-  //     console.error(err.message)
-  //   }
-  // }
 
   useEffect(() => {
     getPersonalInfo();
-    // getGeneralHealthAssessmentInfo(),
-    // getGoalSettingInfo(),
-    // getLifeStyleAssInfo()
   }, [userInfo]);
   return (
     <div>
       {allResults.map((items, i) => {
         return (
           <UserNameCom
-            key={i}
+            key={allResults[i].p_id}
             // id={allResults[i].p_id}
             // email={allResults[i].email}
             fullname={allResults[i].fullname}

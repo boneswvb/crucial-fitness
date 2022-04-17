@@ -13,16 +13,17 @@ function PatientPersonalDetailsCon() {
         "http://localhost:5000/api/LifeStyleAssForm"
       );
       const jsonData = await response.json();
-      for (let i = 0; i < jsonData.length; i++) {
+      for (let i = 0; i < jsonData.length; i += 1) {
         return jsonData.map((data) =>
           userInfo.email === data.email
-            ? setAllResults((allResults) => [...allResults, data])
+            ? setAllResults(() => [...allResults, data])
             : null
         );
       }
     } catch (err) {
       console.error(err.message);
     }
+    return "Transaction completed successfully";
   };
 
   useEffect(() => {
@@ -34,7 +35,7 @@ function PatientPersonalDetailsCon() {
       {allResults.map((items, i) => {
         return (
           <UserNameCom
-            key={i}
+            key={allResults[i].laf_id}
             email={allResults[i].email}
             curhealtproblems={allResults[i].curhealtproblems}
             medicalhistory={allResults[i].medicalhistory}

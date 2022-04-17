@@ -18,7 +18,7 @@ function SubmitPractisionerComments() {
         });
   };
   return (
-    <div className="d-flex justify-content-around">
+    <div>
       <PractisionerComments handlechange={handleChange} state={formState} />
     </div>
   );

@@ -18,7 +18,7 @@ function SubmitPractisionerInputAssessment() {
         });
   };
   return (
-    <div className="d-flex justify-content-around">
+    <div>
       <PractisionerInputAssessment
         handlechange={handleChange}
         state={formState}

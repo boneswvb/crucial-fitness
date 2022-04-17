@@ -16,21 +16,20 @@ function PatientPersonalDetailsCon() {
         "http://localhost:5000/api/GeneralHealthAssessmentForm"
       );
       const jsonData = await response.json();
-      for (let i = 0; i < jsonData.length; i++) {
+      for (let i = 0; i < jsonData.length; i += 1) {
         return jsonData.map((data) =>
           userInfo.email === data.email
-            ? setGeneralHealthAssessmentInfoAllResults(
-                (GeneralHealthAssessmentInfoResults) => [
-                  ...GeneralHealthAssessmentInfoResults,
-                  data,
-                ]
-              )
+            ? setGeneralHealthAssessmentInfoAllResults(() => [
+                ...GeneralHealthAssessmentInfoResults,
+                data,
+              ])
             : null
         );
       }
     } catch (err) {
       console.error(err.message);
     }
+    return "Transaction completed successfully";
   };
 
   useEffect(() => {
@@ -44,7 +43,7 @@ function PatientPersonalDetailsCon() {
       {GeneralHealthAssessmentInfoResults.map((items, i) => {
         return (
           <UserProfileCom
-            key={i}
+            key={GeneralHealthAssessmentInfoResults[i].haf_id}
             haf_id={GeneralHealthAssessmentInfoResults[i].haf_id}
             email={GeneralHealthAssessmentInfoResults[i].email}
             ihavesomeonetotalkto={
